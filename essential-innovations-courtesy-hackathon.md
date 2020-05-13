@@ -20,7 +20,7 @@ I am going to list down 2 projects here (the winners of course :) ). There were 
 
 This team had developed a working prototype that measures body temperature, heart rate and humidity.
 
-They had built it using following hardware
+They had built it using following hardware 
 
 - ESP-12E NodeMCU (Read [here](https://www.instructables.com/id/Programming-ESP8266-ESP-12E-NodeMCU-Using-Arduino-/))
 -  DHT 11 - Humidity sensor
