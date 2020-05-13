@@ -29,7 +29,7 @@ They had built it using following hardware
 
 
 
-Please see image below
+Please see image below 
 
 
 
