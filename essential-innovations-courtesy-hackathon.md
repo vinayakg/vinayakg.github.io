@@ -23,7 +23,7 @@ This team had developed a working prototype that measures body temperature, hear
 They had built it using following hardware 
 
 - ESP-12E NodeMCU (Read [here](https://www.instructables.com/id/Programming-ESP8266-ESP-12E-NodeMCU-Using-Arduino-/))
--  DHT 11 - Humidity sensor
+-  DHT 11 - Humidity sensor 
 - Heart rate sensor (RC-A-4015)
 - Temperature sensor (LM-35)
 
