@@ -5,7 +5,7 @@ tags: [ssh, git, auth, secure]
 layout: post
 permalink: /staying-sane-using-multiple-git-accounts
 ---
-The other day I wanted to configure multiple git accounts on my laptop and I felt I had to jump through a lot of hoops to get that done, I understood how things work actually when you connect using ssh and the role of ssh-agent. Also had to refer a bunch of articles and connect dots from them to be able to make it work for me. So I felt I should write the steps I followed so it becomes easy for other folks looking to setup similar and save them time and possible pain :-)
+The other day, I wanted to configure multiple git accounts on my laptop and I felt I had to jump through a lot of hoops to get that done, I understood how things work actually when you connect using ssh and the role of ssh-agent. Also had to refer a bunch of articles and connect dots from them to be able to make it work for me. So I felt I should write the steps I followed so it becomes easy for other folks looking to setup similar and save them time and possible pain :-)
 
 
 
