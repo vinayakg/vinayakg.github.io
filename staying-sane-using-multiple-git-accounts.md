@@ -1,6 +1,6 @@
 ---
 title: Staying sane while using multiple git accounts
-layout: none
+layout: post
 categories: [tech, learnings, productivity]
 tags: [ssh, git, auth, secure]
 ---
