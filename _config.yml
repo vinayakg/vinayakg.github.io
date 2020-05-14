@@ -61,7 +61,6 @@ include:
    - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
-   - CONTRIBUTING.md
    - Gemfile
    - Gemfile.lock
 #   - node_modules/
