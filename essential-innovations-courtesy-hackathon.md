@@ -1,5 +1,5 @@
 ---
-title: Staying sane while using multiple git accounts
+title: Essential Innovations, Courtesy Hackathon
 categories: [tech, learnings, hackathon, health]
 tags: [medicine, essential, embedded, hacks]
 ---
