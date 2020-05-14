@@ -1,7 +1,9 @@
 ---
 title: Essential Innovations, Courtesy Hackathon
-categories: [tech, learnings, hackathon, health]
+#categories: [tech, learnings, hackathon, health]
 tags: [medicine, essential, embedded, hacks]
+layout: post
+permalink: essential-innovations-courtesy-hackathon
 ---
 
 The recent hackathon that we hosted [last month at Pickyourtrail](https://linkedin.com/posts/pickyourtrail_lifeatpickyourtrail-startup-startuplife-activity-6628647964623638528-2CFX) was a successful hackathon that saw 10 teams participating and a ton of innovation and yes some learnings for us on how we can do better.
@@ -39,11 +41,11 @@ Please see image below
 
 
 
-![Circuit built](https://media-exp1.licdn.com/dms/image/C5112AQF24V2PY5EWgg/article-inline_image-shrink_1000_1488/0?e=1594857600&v=beta&t=m_HoF_Cuph_gg8Qr6rVDceDLT2kc2QT4fI0X24E5_4I)
+![Circuit built](assets/circuit_built.png)
 
 And the output here
 
-![Dashboard built by team](https://media-exp1.licdn.com/dms/image/C5112AQGhtC8v-MnYHg/article-inline_image-shrink_1000_1488/0?e=1594857600&v=beta&t=Bhf6kRkXFHOd3yR2h2F8HdaUSB9iiibP11Ml94lrhP8)
+![Dashboard built by team](assets/dashboard_built_by_team.png)
 
 ### **How it was built:**
 
@@ -66,11 +68,11 @@ Please see below image
 
 
 
-![Circuit diagram specifications](https://media-exp1.licdn.com/dms/image/C5112AQGm-hoaay-uQg/article-inline_image-shrink_1000_1488/0?e=1594857600&v=beta&t=cBL-Hwiqs_CUMGH_y2BvtkpyNTZo2Qm8-aofksizu_Q)
+![Circuit diagram specifications](assets/circuit_diagram_specifications.png)
 
 And the output here
 
-![Central Dashboard](https://media-exp1.licdn.com/dms/image/C5112AQHJ0_JQvH60Jw/article-inline_image-shrink_1000_1488/0?e=1594857600&v=beta&t=U3E3MrrVv4Af8kbxsGK2jweEzeeZTb5A9KScwZ8bwM8)
+![Central Dashboard](assets/central_dashboard.png)
 
 ### **How it was built:**
 
