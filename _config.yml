@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Vinayak's (B)log
+title: "Vinayak's (B)log"
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
    Vinayak Ganapuram's learnings and findings along the way.
@@ -57,12 +57,12 @@ include:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
- exclude:
-   - .sass-cache/
+# exclude:
+#   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
-   - Gemfile
-   - Gemfile.lock
+#   - Gemfile
+#   - Gemfile.lock
 #   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/
