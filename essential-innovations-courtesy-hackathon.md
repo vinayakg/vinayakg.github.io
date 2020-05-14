@@ -1,3 +1,9 @@
+---
+title: Staying sane while using multiple git accounts
+categories: [tech, learnings, hackathon, health]
+tags: [medicine, essential, embedded, hacks]
+---
+
 The recent hackathon that we hosted [last month at Pickyourtrail](https://linkedin.com/posts/pickyourtrail_lifeatpickyourtrail-startup-startuplife-activity-6628647964623638528-2CFX) was a successful hackathon that saw 10 teams participating and a ton of innovation and yes some learnings for us on how we can do better.
 
 This hackathon event was organized by [Sastra University](https://inlinkedin.com/company/sastra-university) and Pickyourtrail was invited to be the jury for the theme: Smart Health. This was a 36 hour hackathon that ended on 22nd Jan with 65 participants across 14 teams from across different states. I am listing down my experience with this hackathon and what I saw and what I felt and yes what I learnt.
