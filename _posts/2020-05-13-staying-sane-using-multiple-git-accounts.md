@@ -248,8 +248,7 @@ And the corresponding config too
 
 It was real fun learning and experimenting all this with multiple accounts all by myself. I also understood the major role of ssh-agent works and how you don't need the agent for git auth if you use the ssh config
 
-If there are any missing pieces, feel free to let me know in the comments section below ( if there's a comment section - or share your email address )
-
+If there are any missing pieces, feel free to let me know in the comments section below
 
 
 #### References:
