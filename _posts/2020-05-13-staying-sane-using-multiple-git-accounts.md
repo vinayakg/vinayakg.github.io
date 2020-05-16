@@ -5,11 +5,11 @@ tags: [ssh, git, auth, secure]
 layout: post
 permalink: /staying-sane-using-multiple-git-accounts
 ---
-The other day, I wanted to work with many git accounts on my laptop and I felt it was not easy and required many steps. I had to understood how things work actually when you use git via ssh and the role of ssh-agent. Also had to refer many articles and connect dots from them to be able to make it work for me. I felt I should document these steps so it can help other folks use this and save time and possible pain :-)
+The other day, I wanted to work with many git accounts on my laptop and I felt it was not easy and required many steps. I had to understand how things worked when you use git via ssh and the role of ssh-agent. Also, I had to refer to many articles and connect dots from them to be able to make it work for me. I felt I should document these steps so it can help other folks to use this and save time and the possible pain points they might be facing :)
 
 
 
-If you don't have the need to use many git accounts - am sure there will be learnings for you on how things actually work. So stay with me and keep reading  
+If you don't have the need to use many git accounts - I'm sure there will be learnings for you on how things actually work. So stay with me and keep reading  
 
 
 In case you have an existing git setup and looking to to start fresh, head to [Troubleshoot section](#Troubleshooting)
@@ -29,7 +29,7 @@ Generate new SSH keys using below commands
 ssh-keygen -t rsa -C "vg@work.com" -f "id_work_user"
 ```
 
-Set the passphrase, so the keys are secure even if you loose device. Also let's use RSA and avoid using DSA based algorithms (blog post coming soon on that). There are 2 files generated `id_work_user` and `id_work_user.pub` at the location `~/.ssh`.
+Set the passphrase, so the keys are secure even if you lose the device. Also let's use RSA and avoid using DSA based algorithms (blog post coming soon on that). There are 2 files generated `id_work_user` and `id_work_user.pub` at the location `~/.ssh`.
 
 Let's dissect the above command. 
 
@@ -37,7 +37,7 @@ Let's dissect the above command.
 
 `-C` comment that will help us associate the key with its purpose, we will see the command later
 
-`-f` file name to use for saving
+`-f` file name can be used for saving
 
 Run the above command for the other git accounts too
 
@@ -84,7 +84,7 @@ ssh-add ~/.ssh/id_rsa_work_user1
 
 ###### Usage
 
-To start using ssh-agent, you need to set useremail registered with git. git uses this for authentication, username (does not matter - could be any, please try and see :))
+To start using ssh-agent, you need to set useremail registered with git. git uses this for authentication, username (does not matter - could be any, please do try and see
 
 Commands:
 
@@ -108,9 +108,9 @@ And you can do a git clone on a new repository and work with it by using our fam
 git clone git@github.com:vinayakg/repo
 ```
 
-The next time you have to work on many git accounts follow the above steps (`git config` && `ssh-add`). It's also possible to create handy aliases in git or in shell to save the number of keystrokes. You need not use the global command with git config if you are working on an existing repository. Its also possible to set email in the local .git/config, but this is not helpful for new repositories
+The next time you have to work on many git accounts follow the above steps (`git config` && `ssh-add`). It's also possible to create handy aliases in git or in shell to save the number of keystrokes. You need not use the global command with git config if you are working on an existing repository. It's also possible to set email in the local .git/config, but this is not helpful for new repositories
 
-##### The SSH Config way	(Preferred way)
+##### The SSH Config way	( The Preferred way)
 
 Here we are going to use the same ssh config that we use for SSH auth while connecting to other machines over cloud. This method needs only changing the url while `git clone` and setting the url while adding `git remote` . Also this does not rely on any folder structures or other commands .
 
@@ -142,7 +142,7 @@ Host gh-work
 
 ######  Usage
 
-Now we have 2 accounts configured. Let's say you want to clone code from personal account. Use the below command. This command will set correct git remotes. So we don't have to worry when we switch back after working in another account
+Now we have 2 accounts configured. Let's say you want to clone code from the personal account. Use the below command. This command will set correct git remotes. So we don't have to worry when we switch back after working in another account
 
 ```shell
 git clone git@gh:vinayakg/repo
@@ -162,7 +162,7 @@ git clone git@gh-work:work/repo
 
 #### Issues with existing git accounts on your machine
 
-The default git account on the machine seems to take precedence and wont let use other git account. To set things fresh, lets clear using below command. git config wont be of so much help
+The default git account on the machine seems to take precedence and wont let us use the other git account. To set things fresh, let's clear using the  below command. git config won't be of so much help
 
 Follow the below steps to reset your existing/previous settings
 
@@ -186,7 +186,7 @@ Go to Launcher :arrow_right: search box :arrow_right:type git username :arrow_ri
 
 ###### Step 3
 
-Now check you ssh-add listing and see the certification that are currently configured. If you see any suspects go ahead and delete them
+Now check your ssh-add listing and see the certifications that are currently configured. If you see any suspects go ahead and delete them
 
 `ssh-add -l` lists the attached credentials
 
@@ -246,10 +246,9 @@ And the corresponding config too
 
 ### Learnings & Conclusion
 
-It was real fun learning and experiment all this with many account myself. Also understood the role of ssh-agent and how you don't need the agent for git auth if you use the ssh config
+It was real fun learning and experimenting all this with multiple accounts all by myself. I also understood the major role of ssh-agent works and how you don't need the agent for git auth if you use the ssh config
 
-If there are any missing pieces, feel free to let me know
-
+If there are any missing pieces, feel free to let me know in the comments section below
 
 
 #### References:
@@ -261,6 +260,10 @@ https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-
 https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
 
 https://help.github.com/en/github/authenticating-to-github/error-permission-denied-publickey
+
+
+
+
 
 
 
