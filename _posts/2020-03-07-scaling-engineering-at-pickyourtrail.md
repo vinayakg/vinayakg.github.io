@@ -5,7 +5,7 @@ tags: [scaling, distributed, systems, quality]
 layout: post
 permalink: /scaling-engineering-at-pyt
 ---
-Attaching the pdf of the talk I gave to [Test Tribe Community](https://www.thetesttribe.com/events/the-test-tribe-4th-chennai-meetup-at-pickyourtrail/)
+This is one of the talks I gave to [Test Tribe Community, Chennai](https://www.thetesttribe.com/events/the-test-tribe-4th-chennai-meetup-at-pickyourtrail/)
 
 #### Gist of the talk
 
