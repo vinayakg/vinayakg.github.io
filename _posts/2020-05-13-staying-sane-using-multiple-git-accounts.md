@@ -12,7 +12,7 @@ The other day, I wanted to work with many git accounts on my laptop and I felt i
 If you don't have the need to use many git accounts - I'm sure there will be learnings for you on how things actually work. So stay with me and keep reading  
 
 
-In case you have an existing git setup and looking to to start fresh, head to [Troubleshoot section](#Troubleshooting)
+In case you have an existing git setup and looking to to start fresh, head to [Troubleshoot section](#troubleshooting)
 
 
 
