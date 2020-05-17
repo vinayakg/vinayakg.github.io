@@ -21,5 +21,5 @@ This is one of the talks I gave at the [Hello Meets Meetup](https://hub.hellomee
 - Scaled engineering by 4x while ensuring quality
 - Achieved Google lighthouse score of 99 on desktop, 73 on mobile
 
-[Slides are here](images/VG-PYT-Apr42020.pdf)
+Slides are [here](images/VG-PYT-Apr42020.pdf)
 
