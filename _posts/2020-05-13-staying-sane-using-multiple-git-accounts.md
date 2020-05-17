@@ -112,7 +112,7 @@ The next time you have to work on many git accounts follow the above steps (`git
 
 ##### The SSH Config way	( The Preferred way)
 
-Here we are going to use the same ssh config that we use for SSH auth while connecting to other machines over cloud. This method needs only changing the url while `git clone` and setting the url while adding `git remote` . Also this does not rely on any folder structures or other commands .
+Here we are going to use the same ssh config that we use for SSH auth while connecting to other machines over cloud. This method needs only changing the url while `git clone` and setting the url while adding `git remote` . Also this does not rely on any folder structures or other commands. (No need to customize git url if you just want to checkout/clone some code)
 
 The SSH config is at `~/.ssh/config`. If this file does not exist for you, please go ahead and create it.
 
