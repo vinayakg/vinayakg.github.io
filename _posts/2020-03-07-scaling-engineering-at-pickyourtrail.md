@@ -1,5 +1,5 @@
 ---
-title: Scaling Engineering at Pickyourtrail
+title: Scaling Engineering @ Pickyourtrail
 #categories: [tech, learnings, productivity]
 tags: [scaling, distributed, systems, quality]
 layout: post
@@ -9,7 +9,7 @@ Attaching the pdf of the talk I gave to [Test Tribe Community](https://www.thete
 
 ##### Gist of the talk
 
-Scaling Engineering at [PYT](https://pickyourtrail.com). This is about how we scaled the engineering at Pickyourtrail to deliver features at scale with quality. We will walk through how we leveraged DevOps, automation tests and best practices to achieve this.
+Scaling Engineering @ [Pickyourtrail](https://pickyourtrail.com). This is about how we scaled the engineering at Pickyourtrail to deliver features at scale with quality. We will walk through how we leveraged DevOps, automation tests and best practices to achieve this.
 
 [PDF is here](images/VG-PYT-Mar72020.pdf)
 
