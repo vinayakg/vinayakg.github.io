@@ -1,9 +1,9 @@
 ---
-title: Scaling Engineering @ Pickyourtrail
+title: Scaling Engineering with quality
 #categories: [tech, learnings, productivity]
 tags: [scaling, distributed, systems, quality]
 layout: post
-permalink: /scaling-engineering-at-pyt
+permalink: /scaling-engineering-with-quality
 ---
 This is one of the talks I gave to [Test Tribe Community, Chennai](https://www.thetesttribe.com/events/the-test-tribe-4th-chennai-meetup-at-pickyourtrail/)
 

@@ -1,9 +1,9 @@
 ---
-title: Scaling Engineering @ Pickyourtrail
+title: Scaling Engineering 
 #categories: [tech, learnings, productivity]
 tags: [scaling, distributed, systems, quality]
 layout: post
-permalink: /scaling-engineering-with-quality
+permalink: /scaling-engineering
 ---
 This is one of the talks I gave at the [Hello Meets Meetup](https://hub.hellomeets.com/e/how-you-can-scale-engineering-to-deliver-quality-features-in-time)
 
