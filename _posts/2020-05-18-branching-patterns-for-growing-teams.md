@@ -6,11 +6,11 @@ layout: post
 permalink: /branching-patterns-for-growing-teams
 ---
 
-I gave a [talk](https://vinayakg.dev/scaling-engineering) last month and there were some discussion and curiosity around the source code branching patterns that I had followed. Folks also wanted details on what were the other things I tried and how’s the current one working and if there are any challenges
+I had given a [talk](https://vinayakg.dev/scaling-engineering) last month and there were few interesting questions around the source code branching patterns that I had followed. Folks also wanted details on what were the other things I tried and how’s the current one working and if there are any challenges.
 
 
 
-Any software development team today has a source control repository that is used to write code for the product/tech debts and there are steps that can be followed to deploy the build. And one would have different repositories, bare minimum one for each team e.g. Front End team, backend team, QA team, devops team, etc. Most of the development teams today follow most of the steps from this [list](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/).
+Any software development team today will have a source control repository that is used to store code written for the product/tech debts. There will be also steps that can be followed to deploy the build. And teams would have different repositories, at least one for each team e.g. Front End team, Backend team, QA team, Devops team, etc. The development teams today follow most of the steps from the [Joel’s Test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/) [list], which is a good indicator of the development teams health and velocity.
 
 When you have a smaller team and the product is just getting started, team generally ends doing [trunk based development](https://paulhammant.com/2013/04/05/what-is-trunk-based-development/) and there is only one default branch i.e. master. As the team grows and there is demand for more features/hotfix/bugfixes, etc. The team adopts various branching strategies based on the need of the team. Source code branching is an involved and important step and any miscommunication or misinformation can lead to a lot of issues that can stake the reputation of the technology team. It is imperative that the entire team is aligned on such initiatives.
 
