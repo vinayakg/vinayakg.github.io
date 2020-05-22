@@ -10,11 +10,11 @@ I had given a [talk](https://vinayakg.dev/scaling-engineering) last month and th
 
 
 
-Any software development team today will have a source control repository that is used to store code written for the product/tech debts. There will also be steps that can be followed to deploy the build and teams would have different repositories, at least one for each team e.g. Front End team, Backend team, QA team, DevOps team, etc. The development teams today follow most of the steps from [Joel’s Test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/) [list], which is a good indicator of the development team’s health and velocity.
+Any software development team today will have a source control repository and its used to store code written for the product/tech debts. There will also be steps to deploy the build and teams would have different repositories, at least one for each team e.g. Front End team, Backend team, QA team, DevOps team, etc. The development teams today follow most of the steps from [Joel’s Test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/) [list]. This list is a good indicator of the development team’s health and velocity.
 
 
 
-When you have a smaller team and the product is just getting started, the team generally ends doing [trunk based development](https://paulhammant.com/2013/04/05/what-is-trunk-based-development/) and there is only one default branch i.e. `master`. As the team starts growing and there is a demand for more features/hotfix/bug fixes, etc, various branching strategies based on the need get adopted. Source code branching is an important step and also a very involved one. Any miscommunication or misinformation around this can lead to a lot of issues that can hamper the development process and make the team inefficient. The entire team must definitely be aligned on such initiatives.
+When you have a smaller team and the product is getting started, the team generally ends doing [trunk based development](https://paulhammant.com/2013/04/05/what-is-trunk-based-development/) and there is only one default branch i.e. `master`. As the team starts growing and there is a demand for more features/hotfix/bug fixes, etc, various branching strategies based on the need get adopted. Source code branching is an important step and also a very involved one. Any miscommunication or misinformation around this can lead to a lot of issues that can hamper the development process and make the team inefficient. The entire team must definitely be on the same page on such initiatives.
 
 
 
@@ -23,11 +23,11 @@ Here, we will discuss the various branching strategies that I had used in the pa
 
 ### Develop Based Development
 
-In this mode of development, all developers work on only one branch for each repository. A branch under origin `develop` is in sync with `master` and is used by developers for development. Each developer develops locally and commits their work to this branch. This branch is the baseline for the entire team. The team has to keep synching/merging theirs periodically to avoid any feature misses or delays in delivery. Once the work is completed for the said release, the code is tested once from the same branch (`develop`) and then it is merged to `master` for the final test/sanity and then deployed to production. One might say why test again? This could be part of the process to test twice and more so code cannot be committed to `master` while still in development. If you use `master` for testing you lose the ability to do hotfixes or other smaller ad-hoc releases. And you do that merge to `master` only after the 1st round of testing. Automation testing could reduce the time, however, this is a 2 step process.
+In this mode of development, all developers work on only one branch for each repository. A branch under origin `develop` is in sync with `master` which developers use for development. Each developer develops and commits their work to this branch. This branch is the baseline for the entire team. The team has to keep synching/merging their locals to avoid any feature misses or delays in delivery. Once the feature/bug is code complete, feature/bug is tested once from the same branch (`develop`) and then it's merged to `master` for the final test/sanity and then deployed to production. One might say why test again? This could be part of the process to test twice and more so code cannot be committed to `master` while still in development. If you use `master` for testing you lose the ability to do hotfixes or other smaller ad-hoc releases. And you do that merge to `master` only after the 1st round of testing. Automation testing could reduce the time, yet, this is a 2 step process.
 
 If you understood what I said above, you will also be able to relate to the problems with it.
 
-With multiple developers working on multiple features required for the release, developers have to constantly keep pulling from the `develop` branch and if they happen to be working on the same file there would be a conflict and the developer has to resolve the conflict before one can proceed ahead with the work. More often developers discover conflicts only when they are about to push their changes to the branch at the origin. That is because git does not allow one to push if your local repository is not in sync with the branch, safety net - else the team will be in trouble.
+With many developers working on various features required for the release, developers have to keep synching/pulling from the `develop` branch and if they happen to be working on the same file there would be a conflict and the developer has to resolve the conflict before one can proceed ahead with the work. More often developers discover conflicts only when they are about to push their changes to the branch at the origin. That is because git does not allow one to push if your local repository is not in sync with the branch, safety net - else the team will be in trouble.
 
 You can set up commands/jobs that can auto sync local repositories but it could upset developers when they are in the middle of some change or they might turn it off to avoid accidental & surprising(unprepared) conflicts.
 
@@ -37,11 +37,11 @@ The entire setup would like this
 
 ![image-20200518022203892](assets/image-20200518022203892.png)
 
-Let me explain what is happening here. Developers Dan and Sam are working on the project and have the branch `develop` as the baseline branch. Sam pushes a commit P1 to branch `develop` after thorough testing by him. This code has to now get synched by Dan to make sure there are no conflicts and is able to get the latest code worked on by Sam - it could be a small feature or API addition that Dan is waiting on from Sam. The longer we delay in merging, the larger could be the conflicts. 
+Let me explain what is happening here. Developers Dan and Sam are working on the project and have the branch `develop` as the baseline branch. Sam pushes a commit P1 to branch `develop` after thorough testing by him. This code has to now get synched by Dan to make sure there are no conflicts and is able to get the latest code worked on by Sam - it could be a small feature or API addition that Dan is waiting on from Sam. The longer we delay in merging, the larger could be the conflicts.
 
 ##### Pros 
 
-- No need to deal with multiple branches
+- No need to deal with many branches
 - Suitable for small teams
 - Easy to follow, understand and release
 - Create one job in the build system for the release and you are good
@@ -50,7 +50,7 @@ Let me explain what is happening here. Developers Dan and Sam are working on the
 
 - Loss of developer productivity resolving conflicts and synching often
 - If the code is not [modularized](https://martinfowler.com/articles/branching-patterns.html#importance-modularity) well, this can essentially slow the entire team
-- Does not allow multiple pipelines (needed if working on multiple features) which can slow testing and delivery
+- Does not allow multiple pipelines (needed if working on many features) which can slow testing and delivery
 - Cannot scale beyond small teams
 
 
@@ -58,7 +58,7 @@ Let me explain what is happening here. Developers Dan and Sam are working on the
 
 ### Feature branch development
 
-As the team size grows they may choose Feature branch strategy. In this mode of development, there are as many branches as there are features. And they are all created from master. The names of the branches resemble the features that will be delivered as part of that work. e.g.`flights-API`, `new-user-auth`. This gives a lot of flexibility to the development teams and can prove very effective provided certain things are taken care of. There should not be any dependency between these features and their branches. If there are then, the team has to be cognizant of those and merge/sync at designated touchpoints. Else, we are back to single branch development. In short, features do not need to be modularized. The project manager/delivery manager needs to make sure there are no breakages/regression when these branches are merged to `master` for final delivery. Even if you have staggered features releases to deliver small chunks, you may miss features/bugfixes/hotfixes since there are [frequent integrations](https://martinfowler.com/articles/branching-patterns.html#High-frequencyIntegration). And that is only possible if you have a solid regression suite, great testing team, [Self Testing Code](https://martinfowler.com/bliki/SelfTestingCode.html) and Automation Testing in place. [Continuous Integration](https://martinfowler.com/articles/branching-patterns.html#continuous-integration) is also one of the ways to solve this. But lots of startups may not be able to put this in place or may not need for their scale. There is one more thing, merge conflicts. As the saying goes - if you fall off a tall building, the falling isn’t going to hurt you, but the landing will. Hence with source code: branching is easy, merging is harder.
+As the team size grows they may choose Feature branch strategy. In this mode of development, there are as many branches as there are features. And they are all created from `master`. The names of the branches resemble the features that get delivered as part of that work. e.g.`flights-API`, `new-user-auth`. This gives a lot of flexibility to the development teams and can prove very effective provided certain things are in check. There should not be any dependency between these features and their branches. If there are dependencies, then the team has to be cognizant of those and merge/sync at designated touch-points. Else, we are back to single branch development. In short, features need to be modular. The project manager/delivery manager needs to make sure there are no breakages/regression when these branches get merged with `master` for final delivery. Even if you have staggered features releases to deliver small chunks, you may miss features/bugfixes/hotfixes since there are [frequent integrations](https://martinfowler.com/articles/branching-patterns.html#High-frequencyIntegration). And that is only possible if you have a solid regression suite, great testing team, [Self Testing Code](https://martinfowler.com/bliki/SelfTestingCode.html) and Automation Testing in place. [Continuous Integration](https://martinfowler.com/articles/branching-patterns.html#continuous-integration) is also one of the ways to solve this. But lots of startups may not be able to put this in place or may not need for their scale. There is one more thing, merge conflicts. As the saying goes - if you fall off a tall building, the falling isn’t going to hurt you, but the landing will. Hence with source code: branching is easy, merging is harder.
 
 
 
@@ -66,7 +66,7 @@ The setup would like this
 
 ![image-20200518025335478](assets/image-20200518025335478.png)
 
-The above diagram is self exploratory. Also, each branch with multiple developers working would still have the same challenges as seen above in [Develop Based Development](#development)
+The above diagram is self exploratory. Also, each branch with many developers working would still have the same challenges as seen above in [Develop Based Development](#development)
 
 ##### Pros 
 
@@ -77,7 +77,7 @@ The above diagram is self exploratory. Also, each branch with multiple developer
 
 ##### Cons
 
-- Important to merge/sync with master as frequently as possible. Larger merges can bring the system to a halt
+- Important to merge/sync with master as as possible. Larger merges can bring the system to a halt
 - If the code is not [modularized](https://martinfowler.com/articles/branching-patterns.html#importance-modularity) well, this can essentially slow the entire team
 - Faster development can lead to code quality issues
 - Can slow down if the right tooling and processes are not set in place
@@ -98,7 +98,7 @@ There is one more important thing which helped a lot in scaling this and making 
 
 
 
-We follow [an open source PR model using personal forks](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests) for code reviews and are working well. Everyone creates a PR to an origin branch from their fork and submits for review. The code review process is not the responsibility of a few leaders or architects. It's the collective responsibility of the team and everyone is an equal contributor. There is no elite class of people who own the rights to merge/quality. This way you can foster and drive quality across the board and each person feels equally responsible. Since you are trusting every member equally people share a sense of pride and develop belongingness.
+We follow [an open source PR model using personal forks](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests) for code reviews and are working well. Everyone creates a PR to an origin branch from their fork and submits for review. The code review process is not the responsibility of a few leaders or architects. It's the collective responsibility of the team and everyone is an equal contributor. There is no elite class of people who own the rights to merge/quality. This way you can foster and drive quality across the board and each person feels equally responsible. Since you are trusting every member, people share a sense of pride and develop belongingness.
 
 
 
@@ -112,7 +112,7 @@ The simple command that we use is as follows
 git log --pretty="%H" | grep $(git rev-parse master)
 ```
 
-If the above command does not produce any output, it means the code is not in sync and the build script can be aborted
+If the above command does not produce any output, it means the code is not in sync and the build script is aborted
 
 And to make sure our code is not missed and branches up for release have latest code, we raise a Auto PR to master using the below command
 
@@ -157,8 +157,8 @@ For completeness, the PR model is explained below
 
 ##### Cons
 
-- If the code is not [modularized](https://martinfowler.com/articles/branching-patterns.html#importance-modularity) well, this can essentially slow the entire team
-- Requires fair bit of co-ordination initially so all understand the process
+- If the code is not [modularized](https://martinfowler.com/articles/branching-patterns.html#importance-modularity) well, this can slow the entire team
+- Requires fair bit of co-ordination (initially) so all understand the process
 - Can be called an anti pattern.
 
 
@@ -197,4 +197,5 @@ https://www.youtube.com/watch?v=Nffzkkdq7GM
 https://martinfowler.com/articles/branching-patterns.html
 
 https://www.codacy.com/ebooks/guide-to-code-reviews-II
+
 
