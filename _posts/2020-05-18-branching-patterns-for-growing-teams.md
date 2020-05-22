@@ -6,7 +6,7 @@ layout: post
 permalink: /branching-patterns-for-growing-teams
 ---
 
-I had given a [talk](https://vinayakg.dev/scaling-engineering) last month and there were few interesting questions around the source code branching patterns that I had followed. Folks also wanted details on what were the other things I tried and how’s the current one working and if there are any challenges.
+I had given a [talk](https://vinayakg.dev/scaling-engineering) last month and there were a few interesting questions around the source code branching patterns that I had followed. Folks also wanted details on what were the other things I tried and how’s the current one working and if there are any challenges.
 
 
 
