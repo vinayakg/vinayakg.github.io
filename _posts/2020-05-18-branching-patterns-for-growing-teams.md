@@ -10,11 +10,11 @@ I had given a [talk](https://vinayakg.dev/scaling-engineering) last month and th
 
 
 
-Any software development team today will have a source control repository that is used to store code written for the product/tech debts. There will be also steps that can be followed to deploy the build. And teams would have different repositories, at least one for each team e.g. Front End team, Backend team, QA team, Devops team, etc. The development teams today follow most of the steps from the [Joel’s Test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/) [list], which is a good indicator of the development teams health and velocity.
+Any software development team today will have a source control repository that is used to store code written for the product/tech debts. There will be also steps that can be followed to deploy the build and teams would have different repositories, at least one for each team e.g. Front End team, Backend team, QA team, Devops team, etc. The development teams today follow most of the steps from the [Joel’s Test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/) [list], which is a good indicator of the development team's health and velocity.
 
-When you have a smaller team and the product is just getting started, team generally ends doing [trunk based development](https://paulhammant.com/2013/04/05/what-is-trunk-based-development/) and there is only one default branch i.e. master. As the team grows and there is demand for more features/hotfix/bugfixes, etc. The team adopts various branching strategies based on the need of the team. Source code branching is an involved and important step and any miscommunication or misinformation can lead to a lot of issues that can stake the reputation of the technology team. It is imperative that the entire team is aligned on such initiatives.
+When you have a smaller team and the product is just getting started, team generally ends doing [trunk based development](https://paulhammant.com/2013/04/05/what-is-trunk-based-development/) and there is only one default branch i.e. master. As the team starts growing and there is demand for more features/hotfix/bugfixes, etc, team adopts various branching strategies based on the need. Source code branching is an important step and also a very involved one. Any miscommunication or misinformation around this can lead to a lot of issues that can hamper the development process and make the team inefficient. It is imperative that the entire team is aligned on such initiatives.
 
-Here we will discuss the various branching strategies that I have used in the past to the current one that has helped me to scale and improve quality and drive efficiency.
+Here we will discuss the various branching strategies that I had used in the past to the current one that has helped me to scale and improve quality and drive efficiency.
 
 
 ### Develop Based Development
