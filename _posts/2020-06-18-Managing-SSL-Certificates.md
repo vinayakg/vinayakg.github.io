@@ -193,7 +193,7 @@ If you would like certificate file formats, kindly read [these](https://support.
 The next task was to import this to ACM (you may end up using certificates offered by AWS ACM), assuming you want to use LetsEncypt certificates in AWS, we may use the below command to import the certificates to ACM.
 
 ```bash
-sudo aws acm import-certificate --certificate fileb:///etc/letsencrypt/live/vinayakg.dev/cert.pem --private-key fileb:///etc/letsencrypt/live/vinayakg.dev/privkey.pem --certificate-chain fileb:///etc/letsencrypt/live/vinayakg.dev/fullchain.pem --profile hfn
+sudo aws acm import-certificate --certificate fileb:///etc/letsencrypt/live/vinayakg.dev/cert.pem --private-key fileb:///etc/letsencrypt/live/vinayakg.dev/privkey.pem --certificate-chain fileb:///etc/letsencrypt/live/vinayakg.dev/fullchain.pem 
 ```
 
 
@@ -201,7 +201,7 @@ sudo aws acm import-certificate --certificate fileb:///etc/letsencrypt/live/vina
 And you are set, your certificate is imported into AWS ACM. Run the below command to query the certificate
 
 ```bash
-aws acm list-certificates --profile hfn | jq '.CertificateSummaryList[] | select(.DomainName == "vinayakg.dev") | .CertificateArn'
+aws acm list-certificates  | jq '.CertificateSummaryList[] | select(.DomainName == "vinayakg.dev") | .CertificateArn'
 ```
 
 In order to apply to the listener on your Load Balancer, you need the listenerarn. You may find that using the steps I mentioned in one of my [previous](https://vinayakg.dev/understanding-alb-rules-cli) article
