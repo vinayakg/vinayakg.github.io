@@ -12,7 +12,7 @@ This article is about a SSL/TLS certificate expiry issue we had with one of the 
 
 
 
-### Introduction   
+## Introduction   
 
 Every website today uses [SSL/TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) certificate to secure the content that is delivered to end users. And these certificates have a certain fixed expiry, generally 3 months - 1 year max. And **Shorter validity periods** limit damage from key compromise and mis-issuance, stolen keys and mis-issued certificates are valid for a shorter period of time. Which means we need to renew or create new certificates post expiry so that your users will continue to have a secure experience. Since there is a periodic renewal and upgrading/updating of certificates needed for the web properties, we need to monitor them for expiry, update/renew/create certificates and finally apply them to our web properties. We will see what we can do for managing/maintaining the certificates.
 
@@ -22,7 +22,7 @@ The below steps will apply even for folks who are creating new TLS certificates,
 
 Lets start looking at various steps involved in monitoring, updating/creating and applying them to your web properties.
 
-### Monitoring Certificates
+## Monitoring Certificates
 
 In 2020, if you had thought that there is no need to monitor certificates for expiry and other stuff, thats not the case though - even when you infrastructure is hosted on cloud providers like AWS which also offers TLS certificates via [ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html)
 
@@ -32,13 +32,13 @@ Lets look at various options for monitoring our website SSL certificates. We wil
 
 
 
-#### Online Monitoring of Expiry & Vulnerabilities
+### Online Tools
 
 You may use online tools like [site24x7](https://www.site24x7.com/help/admin/adding-a-monitor/ssl-certificate-monitor.html), [letsencrypt monitor](https://letsmonitor.org/), or even do this in [nagios](https://kifarunix.com/monitor-ssl-tls-certificates-expiry-with-nagios/) or [solarwinds](https://www.solarwinds.com/server-application-monitor/use-cases/ssl-certificate-monitor) or [ssllabs](https://www.ssllabs.com/ssltest/analyze.html?d=vinayakg.dev&latest) tools
 
-#### CLI tools - validity
+### CLI tools - validity
 
-##### AWS SDK 
+#### AWS SDK 
 
 Applicable only if you are hosted on AWS and you have certificates created with ACM.
 
@@ -58,7 +58,7 @@ aws acm describe-certificate --certificate-arn "certificatearn" | jq '.Certifica
 
 
 
-##### Linux
+#### Linux
 
 There are ready made tools cli on Linux to find validity of certificates
 
@@ -76,7 +76,7 @@ You may compute/use the no of days from the above script and then generate alert
 
  
 
-#### CLI Tools - Vulnerability
+### CLI Tools - Vulnerability
 
 `````bash
 testssl.sh vinayakg.dev
@@ -86,13 +86,13 @@ This tool  checks a server's service on any port for the support of TLS/SSL ciph
 
 
 
-#### AWS Config
+### AWS Config
 
 [AWS config](https://ap-south-1.console.aws.amazon.com/config) is a tool that can be used to set rules like `acm-certificate-expiration-check` to check for certificate expiration. Here is the complete [list](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html) of what you can do with those rules. There are some interesting things you can do to improve visibility and monitoring of storage, vpc, networking, and ec2 - will keep the details for other post and not digress from that.
 
 
 
-### Upgrade/Renewal of Certificates
+## Upgrade/Renewal of Certificates
 
 Like I mentioned in the introduction, certificates only have a certain after they are invalid and you need to renew/upgrade them.
 
@@ -100,9 +100,11 @@ Like I mentioned in the introduction, certificates only have a certain after the
 
 AWS does not have any options to renew public certificates using `aws cli`, you can renew only private certificates.
 
-#### Create Certificate on AWS
+### Create Certificate on AWS
 
-##### Method 1
+#### Method 1
+
+##### Creation
 
 You can use `aws sdk` to create a certificate for **vinayakg.dev** then you could use the below command 
 
@@ -112,8 +114,6 @@ aws acm request-certificate --domain-name vinayakg.dev --validation-method DNS -
 
 In the above command we are requesting a new certificate for vinayakg.dev (remember we cant renew public certificates on AWS ACM), our validation method is DNS (dns entries can be automated and hence the choice) and also idempotency to make sure even accidental repeat requests are considered as one. For more options, please check this [link](https://docs.aws.amazon.com/cli/latest/reference/acm/).
 
-
-
 ##### Validation
 
 We can also automate addition of dns entries to Route 53, if the domain is hosted there. If your domain on hosted on non-AWS infrastructure, its gonna be manual.
@@ -121,8 +121,6 @@ We can also automate addition of dns entries to Route 53, if the domain is hoste
 ````bash
 certificatearn=$(aws acm list-certificates --certificate-statuses "ISSUED" "PENDING_VALIDATION" | jq '.CertificateSummaryList[] | select(.DomainName == "longweekend.co.in") | .CertificateArn')
 ````
-
-
 
 We get the certificate arn from the above command which we use to find the dns validation records with the help of below command
 
@@ -147,7 +145,7 @@ In the above script you need to set $record_name and $record_value from the `des
 
 
 
-##### Method 2
+#### Method 2
 
 You may also use cloud formation template to link the aws hosted zone and add the dns records readily. The script is [here](https://github.com/jthomerson/lastweekingoogle.com/blob/07ed0573cf8611e7b89f270ea402f4c00c2e5d77/infra/lastweekingoogle-site/serverless.yml#L192-L218)
 
