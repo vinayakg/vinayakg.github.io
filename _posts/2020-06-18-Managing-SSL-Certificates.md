@@ -1,4 +1,5 @@
 ---
+
 title: Managing SSL Certificates
 #categories: [tech, learnings, productivity]
 tags: [ssl, tls, devops, monitor, aws]
@@ -153,9 +154,79 @@ You may also use cloud formation template to link the aws hosted zone and add th
 
 ### LetsEncrypt
 
-LetsEncrypt has become the default TLS provider for most orgs as it costs nothing for the organizations and LetsEncrypt lets you automate all aspects of Certificate management - this was built right  
+LetsEncrypt has become the default TLS provider for most orgs as it costs nothing for the organizations and LetsEncrypt lets you automate all aspects of Certificate management - this was built right from the begining. When I had checked last, they would let you choose a webserver and it was necessary to run your web server on the machine where you run [certbot](https://certbot.eff.org/docs/using.html). 
+
+It has come a long long way and lets you create certificates in standalone way (no webserver needed). In the standalone mode it lets you identify the website owner in below ways
+
+- HTTP-01 - needs you to be able to return 404 in a certain format, details [here](https://letsencrypt.org/docs/challenge-types/)
+- DNS-01 - needs you to have api access to the DNS provider, AWS is not [here](https://certbot.eff.org/docs/using.html#dns-plugins)
+- ~~TLS-SNI-01~~ - deprecated now
 
 
+
+I wanted to use HTTP-01 but it did not work with my github-pages (my site is on GH, not very easy to customize 404). Then I tried DNS-01, provider [dnsmadeeasy](https://dnsmadeeasy.com/) was one of the listed provider so went ahead and got the api key and secret key to create the certificate.
+
+
+
+```bash
+certbot certonly \
+  --dns-dnsmadeeasy \
+  --dns-dnsmadeeasy-credentials ~/.secrets/certbot/dnsmadeeasy.ini \
+  --dns-dnsmadeeasy-propagation-seconds 120 \
+  -d vinayakg.dev
+```
+
+This generated the below files
+
+```bash
+/etc/letsencrypt/live/vinayakg.dev
+  |-- cert.pem
+  |-- chain.pem
+  |-- fullchain.pem
+  |-- privkey.pem
+```
+
+You can take and apply these files to any webserver or Load balancer that you have. We have the private key, certificate and full chain, so its complete in all sense. If you would like to apply it to any webserver you will have to change the format and use it. Follow [this](https://stackoverflow.com/questions/13732826/convert-pem-to-crt-and-key) link if you want to transform to other formats. 
+
+If you would like certificate file formats, kindly read [these](https://support.ssl.com/Knowledgebase/Article/View/19/0/der-vs-crt-vs-cer-vs-pem-certificates-and-how-to-convert-them) and [these](https://crypto.stackexchange.com/questions/43697/what-is-the-difference-between-pem-csr-key-and-crt/43700) links.
+
+The next task was to import this to ACM (you may end up using certificates offered by AWS ACM), assuming you want to use LetsEncypt certificates in AWS, we may use the below command to import the certificates to ACM.
+
+```bash
+sudo aws acm import-certificate --certificate fileb:///etc/letsencrypt/live/vinayakg.dev/cert.pem --private-key fileb:///etc/letsencrypt/live/vinayakg.dev/privkey.pem --certificate-chain fileb:///etc/letsencrypt/live/vinayakg.dev/fullchain.pem --profile hfn
+```
+
+
+
+And you are set, your certificate is imported into AWS ACM. Run the below command to query the certificate
+
+```bash
+aws acm list-certificates --profile hfn | jq '.CertificateSummaryList[] | select(.DomainName == "vinayakg.dev") | .CertificateArn'
+```
+
+In order to apply to the listener on your Load Balancer, you need the listenerarn. You may find that using the steps I mentioned in one of my [previous](https://vinayakg.dev/understanding-alb-rules-cli) article
+
+Finally, run this command to apply the certificate to the listener
+
+```bash
+aws elbv2 add-listener-certificates --listener-arn [ListenerArn] --certificates [CertificateArn]
+```
+
+
+
+This completes all the approaches I had in mind.
+
+
+
+### Learnings
+
+- Starting anything new is easy, maintainability is tough
+- You need to manage your certificates even in the managed cloud world
+- TLS certificates renew/updation are the most ignored ones, they are issues due to this from [time](https://arstechnica.com/gadgets/2020/02/yesterdays-multi-hour-teams-outage-was-due-to-an-expired-ssl-certificate/) to [time](https://www.csoonline.com/article/3444488/equifax-data-breach-faq-what-happened-who-was-affected-what-was-the-impact.html)
+- Set actionable alerts that monitor TLS certificates validity and have a DRI who handles this, could be multiple DRI’s in this case
+- Make sure you monitor your certificate for vulnerable, especially for ones you created the CSR 
+- Certificate update/renewals need to be treated with utmost priority and done in time - dont set a 1 month limit and fail to renew thinking you have a 1 month window
+- AWS Config was a pleasant surprise, did not know it existed - has great features for security and monitoring across many AWS offerings
 
 ### References
 
@@ -164,3 +235,11 @@ https://realguess.net/2016/10/11/a-cli-method-to-check-ssl-certificate-expiratio
 https://www.shellhacks.com/openssl-check-ssl-certificate-expiration-date/
 
 https://gist.github.com/justinclayton/0a4df1c85e4aaf6dde52
+
+https://community.letsencrypt.org/t/using-lets-encrypt-with-aws-elb/34632/7
+
+https://gist.github.com/mikob/a89fd8c5f85e0a00d557
+
+https://blog.alejandrocelaya.com/2016/08/16/setup-a-lets-encrypt-certificate-in-a-aws-elastic-load-balancer/
+
+https://www.digitalocean.com/community/tutorials/how-to-use-certbot-standalone-mode-to-retrieve-let-s-encrypt-ssl-certificates-on-debian-10
