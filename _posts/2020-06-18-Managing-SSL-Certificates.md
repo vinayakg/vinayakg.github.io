@@ -42,7 +42,7 @@ You may use online tools like [site24x7](https://www.site24x7.com/help/admin/add
 
 Applicable only if you are hosted on AWS and you have certificates created with ACM.
 
-You can use `aws acm` to find the certificate you need. If you dont have `aws cli` installed, head [here](https://aws.amazon.com/cli/) and get started
+You can use `aws acm` to find the certificate you need. If you don't have `aws cli` installed, head [here](https://aws.amazon.com/cli/) and get started
 
 ```bash
 aws acm list-certificates --certificate-statuses "ISSUED" "PENDING_VALIDATION" | jq '.CertificateSummaryList[] | select(.DomainName == "vinayakg.dev") | .CertificateArn'
@@ -66,7 +66,7 @@ There are ready made tools cli on Linux to find validity of certificates
 ssl-cert-check -s vinayakg.dev -p 443
 ````
 
-If you dont want to install `ssl-cert-check`, you may choose more primitive tools like below to find the same with some work
+If you don't want to install `ssl-cert-check`, you may choose more primitive tools like below to find the same with some work
 
 ````bash
  curl --insecure -v https://vinayakg.dev 2>&1 | awk 'BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }'
@@ -151,7 +151,9 @@ You may also use cloud formation template to link the aws hosted zone and add th
 
 
 
-#### Renewal using LetsEncrypt
+### LetsEncrypt
+
+LetsEncrypt has become the default TLS provider for most orgs as it costs nothing for the organizations and LetsEncrypt lets you automate all aspects of Certificate management - this was built right  
 
 
 
