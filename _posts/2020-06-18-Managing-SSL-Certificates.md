@@ -9,7 +9,7 @@ permalink: /manage-ssl-tls-certificates
 
 
 
-This article is about a SSL/TLS certificate expiry issue we had with one of the web properties I was managing. Wanted to share the lessons learnt and few thoughts around how certificates can be managed better using the current tools and how we can also automate most of the parts.
+This article is about a SSL/TLS certificate expiry issue we had with one of the web properties I was managing. Wanted to share the lessons learnt and few thoughts around how certificates can be managed better using the current tools. Finally, how we can also automate most of the parts.
 
 
 
@@ -25,9 +25,9 @@ Lets start looking at various steps involved in monitoring, updating/creating an
 
 ## Monitoring Certificates
 
-In 2020, if you had thought that there is no need to monitor certificates for expiry and other stuff, thats not the case though - even when you infrastructure is hosted on cloud providers like AWS which also offers TLS certificates via [ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html)
+In 2020, if you had thought that there is no need to monitor certificates for expiry and other stuff, thats not the case. Even when you infrastructure is hosted on cloud providers like AWS which also offers TLS certificates via [ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html), you still need to monitor them.
 
-However, if you are hosted on [GitHub pages](https://guides.github.com/features/pages/) or [Netlify](https://www.netlify.com/) for personal websites (then they might take care for you). They both use [LetsEncrypt](https://letsencrypt.org/) for TLS infrastructure. Similar could be the case if you are running your commerce on shopify with a custom domain (have not tried myself)
+However, if you are hosted on [GitHub pages](https://guides.github.com/features/pages/) or [Netlify](https://www.netlify.com/) for personal websites (then they might take care of them and even upgrade/update them). They both use [LetsEncrypt](https://letsencrypt.org/) for TLS infrastructure. Similar could be the case if you are running your commerce on shopify with a custom domain (have not tried myself).
 
 Lets look at various options for monitoring our website SSL certificates. We will look at online tools and cli tools as well which can be easily automated in your workflow
 
@@ -225,7 +225,7 @@ This completes all the approaches I had in mind.
 - TLS certificates renew/updation are the most ignored ones, they are issues due to this from [time](https://arstechnica.com/gadgets/2020/02/yesterdays-multi-hour-teams-outage-was-due-to-an-expired-ssl-certificate/) to [time](https://www.csoonline.com/article/3444488/equifax-data-breach-faq-what-happened-who-was-affected-what-was-the-impact.html)
 - Set actionable alerts that monitor TLS certificates validity and have a DRI who handles this, could be multiple DRI’s in this case
 - Make sure you monitor your certificate for vulnerable, especially for ones you created the CSR 
-- Certificate update/renewals need to be treated with utmost priority and done in time - dont set a 1 month limit and fail to renew thinking you have a 1 month window
+- Certificate updation/renewals need to be treated with utmost priority and done in time - dont set a 1 month limit and fail to renew thinking you have a 1 month window
 - AWS Config was a pleasant surprise, did not know it existed - has great features for security and monitoring across many AWS offerings
 
 ### References
