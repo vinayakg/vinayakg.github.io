@@ -9,7 +9,7 @@ permalink: /manage-ssl-tls-certificates
 
 
 
-This article is about a SSL/TLS certificate expiry issue we faced with one of the web properties while I was managing ****. I wanted to share the lessons I had learnt and a few hacks around how certificates can be managed better using the current tools. Keep reading till the end to also know how we can automate most of the parts.
+This article is about a SSL/TLS certificate expiry issue we faced with one of the web properties I was managing. I wanted to share the lessons I had learnt and a few hacks around how certificates can be managed better using the current tools. Keep reading till the end to also know how we can automate most of the parts.
 
 
 
