@@ -209,8 +209,8 @@ Some key observations based on experiments conducted that are worth mentioning f
 - Leverages erasure coding to provide fault tolerance against data loss due to function reclamation by provider
 - Performance can be improved by leveraging the aggregated network bandwidth of multiple cloud functions in parallel 
 - InfiniCache provides cost benefit upto almost 30x for all object types (small and big)
-- InfiniCache Can effectively provide 95.4% data availability for each one hour window
-- InfiniCache Achieves 31 – 96x tenant-side cost savings compared to AWS ElastiCache for a large-object only
+- InfiniCache can effectively provide 95.4% data availability for each one hour window
+- InfiniCache achieves 31 – 96x tenant-side cost savings compared to AWS ElastiCache for a large-object only
 production workload
 - Small objects perform better in elastic cache and large object cache performance is almost same between Elastic cache and InfiniCache. InfiniCache is better by 100 times compared to s3
 
