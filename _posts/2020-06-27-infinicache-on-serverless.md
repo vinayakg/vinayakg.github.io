@@ -81,11 +81,14 @@ From the above challenges we understand we need to ideate on below capabilities
 Lets see how InfiniCache solves this problem.
 
 InfiniCache exploits and orchestrates Serverless functions’ memory resources to enable elastic pay-per-use caching. InfiniCache’s design combines [erasure coding](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction) (using [Reed Solomon code](https://www.rubrik.com/blog/erasure-coding-rubrik-doubled-capacity-cluster/)), intelligent billed duration control, and an efficient data backup mechanism to maximize data availability and cost effectiveness while balancing the risk of losing cached state and performance.
-InfiniCache also has a well designed method for storage of bigger objects which we will explore in the [PUT](#PUT) section
+InfiniCache also has a well designed method for storage of bigger objects which we will explore in the [PUT](#put) section
 
-Lets look at the typical architecture and the various components involved here viz. [Proxy](#Proxy), [Client Library](#Client Library) & Lambda function
+Lets look at the typical architecture and the various components involved here viz. [Proxy](#Proxy), [Client Library](#client library) & [Lambda function](#cache nodes/pool)
 
 ![InfiniCache_Architecture.png](../assets/InfiniCache_Architecture.png)
+
+
+
 
 
 #### Client Library 
@@ -106,19 +109,30 @@ It is responsible for below functionality
 
 The client library then encodes the object with a pre-configured EC code ((d+ p) using a Reed-Solomon (RS) code) and produces a number of object chunks (configurable), each with a unique identifier and the chunk sequence number (since we are splitting the bigger ones into chunks based on EC code).
 
-
 With **Cache Systems**, we have only 2 functionalities that are needed. Insert/Update an item. Retrieve an item.
 So, in any cache system we need 2 APIs to communicate with the cache service. viz. GET and PUT
 
 
-##### **GET - get(key)**
+
+
+#### GET - get(key)
 
 - Client sends GET request
+
 - Client library invokes associated Proxy using Consistent Hashing
+
 - Proxy then looks up mapping table to find relevant chunks for the key and the Lambda nodes. Chunks to object mappings are captured in mapping table.
+
 - Cache nodes transfer object chunks to proxy
 
+  
+
 ![InfiniCache_GET.png](../assets/Infinicache_GET.png)
+
+
+
+
+
 Example. scenario 
 If d2 does not respond in time, then in order to minimize the impact of tail latency, we ignore d2 and use d1 data (since RS code config is 2 + 1 and straggler data that can be tolerated in only 1) and proceed with passing d1 and p1.
 
@@ -127,7 +141,9 @@ If d2 does not respond in time, then in order to minimize the impact of tail lat
 
 <!--upto p object chunk losses given a RS code (d+p) and will insert into lambda cache node-->
 
-##### **PUT - put(key, value)**
+
+
+#### PUT - put(key, value)
 
 - Client sends the PUT request
 - The object is split and is encode into k data chunks + r parity chunks using Reed Solomon code
@@ -138,7 +154,10 @@ If d2 does not respond in time, then in order to minimize the impact of tail lat
 - For larger objects, the client library can choose a more aggressive EC code. Details in [references](#References)
 
 
+
+
 ![Infinicache_PUT.png](../assets/Infinicache_PUT.png)
+
 
 
 #### Proxy 
@@ -156,6 +175,8 @@ The proxy is a software that can be run on a VM and provides following features.
 - Proxy server periodically invokes sleeping Lambda cache nodes to extend their lifespan
 - Proxy also co-ordinates data migration and moving data to new Lambda in case one of the 2 replica node is claimed.
 - Proxy sends out backup commands to Lambda cache nodes and lambda nodes perform delta-sync with its peer replica. Source lamdba propagates delta-update to destination lambda
+
+
 
 
 #### Cache Nodes/Pool
@@ -176,6 +197,8 @@ Cache node has following features
 
 Overall the entire architecture is very smart and innovative. Encourage all to read the white paper to understand in detail.
 
+
+
 ### Key Observations
 Some key observations based on experiments conducted that are worth mentioning from the paper
 
@@ -187,7 +210,7 @@ Some key observations based on experiments conducted that are worth mentioning f
 - Improves performance by leveraging the aggregated network bandwidth of multiple cloud functions in parallel 
 - Cost benefit almost 30x for all object types (small and big)
 - Can effectively provide 95.4% data availability for each one hour window
-- Achieves 31 – 96 tenant-side cost savings compared to AWS ElastiCache for a large-object only
+- Achieves 31 – 96x tenant-side cost savings compared to AWS ElastiCache for a large-object only
 production workload
 - Small objects perform better in elastic cache and large object cache performance is almost same between Elastic cache and InfiniCache. InfiniCache is better by 100 times compared to s3
 
