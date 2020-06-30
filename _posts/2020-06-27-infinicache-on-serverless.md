@@ -118,9 +118,10 @@ So, in any cache system we need 2 APIs to communicate with the cache service. vi
 - Proxy then looks up mapping table to find relevant chunks for the key and the Lambda nodes. Chunks to object mappings are captured in mapping table.
 - Cache nodes transfer object chunks to proxy
 
-![InfiniCache_Get.png](../assets/InfiniCache_Get.png)
+![InfiniCache_GET.png](../assets/Infinicache_GET.png)
 Example. scenario 
 If d2 does not respond in time, then in order to minimize the impact of tail latency, we ignore d2 and use d1 data (since RS code config is 2 + 1 and straggler data that can be tolerated in only 1) and proceed with passing d1 and p1.
+
 - Proxy streams k chunks in parallel to client
 - Also if d2 chunk is lost,  data can be constructed using Erasure Code using d1 and p1 
 
