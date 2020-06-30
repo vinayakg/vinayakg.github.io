@@ -202,7 +202,7 @@ Overall the entire architecture is very smart and innovative. Encourage all to r
 ### Key Observations
 Some key observations based on experiments conducted that are worth mentioning from the paper
 
-- In memory Object caching system built using stateless and ephemeral cloud functions
+- In memory Object caching system can be built using stateless and ephemeral cloud functions
 - A service model that charges customers based on requests instead of capacity usage.
 - A Lambda function that finishes execution is kept by AWS for at most 27 minutes if that function is not invoked again.
 - Lifespan of Lambda's can be extended using warm up functions
