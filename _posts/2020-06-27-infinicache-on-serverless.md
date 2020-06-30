@@ -111,7 +111,7 @@ With **Cache Systems**, we have only 2 functionalities that are needed. Insert/U
 So, in any cache system we need 2 APIs to communicate with the cache service. viz. GET and PUT
 
 
-##### GET - get(key)
+##### **GET - get(key)**
 
 - Client sends GET request
 - Client library invokes associated Proxy using Consistent Hashing
@@ -127,7 +127,7 @@ If d2 does not respond in time, then in order to minimize the impact of tail lat
 
 <!--upto p object chunk losses given a RS code (d+p) and will insert into lambda cache node-->
 
-##### PUT - put(key, value)
+##### **PUT - put(key, value)**
 
 - Client sends the PUT request
 - The object is split and is encode into k data chunks + r parity chunks using Reed Solomon code
