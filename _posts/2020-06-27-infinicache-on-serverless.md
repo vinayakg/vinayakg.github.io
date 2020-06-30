@@ -6,15 +6,15 @@ layout: post
 permalink: /infinicache-using-serverless
 ---
 
-I recently stumbled on a whitepaper, [InfiniCache: Exploiting Ephemeral Serverless Functions to Build a Cost-Effective Memory Cache](https://arxiv.org/pdf/2001.10483.pdf) and it appeared very interesting for all my excitement around Serverless technology. So I decided to read it and learn about the how Infinicache can be built. Infinicache looks to leverage the Serverless Pay-Per-Usage pricing model for building a highly scalable distributed cache. 
+I recently stumbled on a whitepaper, [InfiniCache: Exploiting Ephemeral Serverless Functions to Build a Cost-Effective Memory Cache](https://arxiv.org/pdf/2001.10483.pdf) and it appeared very interesting for all my excitement around Serverless technology. So I decided to read it and learn how Infinicache can be built. Infinicache looks to leverage the Serverless Pay-Per-Usage pricing model for building a highly scalable distributed cache. 
 
-Assume the reader has some basic understanding of Cloud Technology, Caching and Serverless/(Function as service - FaaS) and is keen to explore the possibilities with Serverless. Also the evaluation and the solution are around AWS.
+Assume the reader has some basic understanding of Cloud Technology, Caching and Serverless/(Function as service - FaaS) and is keen to explore the possibilities with Serverless. The evaluation and the solution for this service is built around AWS Cloud Services.
 
 ### Introduction
 
 Today’s web applications are increasingly storage-heavy and rely heavily on IMOC (In-memory object caching) caching to deliver desirable I/O performance. And if we want to deliver desirable performance for all the web api's in a cluster, you need a distributed common cache(Redis, Memcache, Hazelcast, etc.) that can be used by all the web api’s. 
 
-Caches are stateful applications, they maintain state of the objects cache and that is returned to the user. They are completely opposite of stateless HTTP servers
+Caches are stateful applications, they maintain state of the objects and that is returned to the user. They are completely opposite of stateless HTTP servers
 
 These caches are generally deployed on persistent cloud instances and have a fixed cost to keep them running, it does not depend on the number of requests it serves. You pay cost for the duration the cloud instance type that was running.
 
@@ -115,7 +115,7 @@ So, in any cache system we need 2 APIs to communicate with the cache service. vi
 
 
 
-#### GET - get(key)
+##### **GET - get(key)**
 
 - Client sends GET request
 
@@ -143,7 +143,7 @@ If d2 does not respond in time, then in order to minimize the impact of tail lat
 
 
 
-#### PUT - put(key, value)
+##### **PUT - put(key, value)**
 
 - Client sends the PUT request
 - The object is split and is encode into k data chunks + r parity chunks using Reed Solomon code
