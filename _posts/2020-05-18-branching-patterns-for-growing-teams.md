@@ -118,8 +118,7 @@ And to make sure our code is not missed and branches up for release have latest 
 
 ````bash
 hub pull-request -m “Merge ${GITHUB_BRANCH_NAME} to master” -l “released-$currentDatetime”
-````
-
+```
 
 
 In the future, we would like to run automation to create a report of branches not synched with master with their age. This will make sure we don’t have long lived branches that are out of sync.
@@ -137,56 +136,49 @@ The tweaked process looks like this
 Let me quickly walk you through the process. Each feature branch gets deployed from the same branch post-testing. Then that branch is merged with master and other branches also take a reverse pull from the master. If not, the build scripts will catch for sure. :)
 
 For completeness, the PR model is explained below
-●  Developers create branches on their forks 
-●  Create a branch on central and raise a PR 
-●  PR is reviewed and closed 
-●  Code is tested 
-●  Deployed to live  
-
+* Developers create branches on their forks 
+* Create a branch on central and raise a PR 
+* PR is reviewed and closed 
+* Code is tested 
+* Deployed to live  
+ 
 
 
 ##### Pros 
 
-- Scales well
-- Suitable for larger teams
-- No more sync/conflicts with dependencies ironed out
-- Ability to [create pipelines](https://martinfowler.com/bliki/DeploymentPipeline.html)
-- Faster releases, auto PR/merges help
-- No more code misses/feature misses
-- With code review, quality is solved
+* Scales well
+* Suitable for larger teams
+* No more sync/conflicts with dependencies ironed out
+* Ability to [create pipelines](https://martinfowler.com/bliki/DeploymentPipeline.html)
+* Faster releases, auto PR/merges help
+* No more code misses/feature misses
+* With code review, quality is solved
 
 ##### Cons
 
-- If the code is not [modularized](https://martinfowler.com/articles/branching-patterns.html#importance-modularity) well, this can slow the entire team
-- Requires fair bit of co-ordination (initially) so all understand the process
-- Can be called an anti pattern.
+* If the code is not [modularized](https://martinfowler.com/articles/branching-patterns.html#importance-modularity) well, this can slow the entire team
+* Requires fair bit of co-ordination (initially) so all understand the process
+* Can be called an anti pattern.
 
 
 ### Learnings
 
-- Follow what works for you and your team
-
-- Try and be ready to change if a strategy does not work
-
-- Get management buy in for code-reviews so the timings are factored accordingly and there is enough visibility
-
-- Make sure to showcase the value of code review and evangelize across the org. Use simple metrics like bugs reduced per build and post deployment.
-
-- Encourage developers to run the code on their machines and review code
-
-- Refrain from using reviewing code on browser, they are not native editors (long lines are still an issue)
-
--  Keep your `master` sane and in release state
-
-- Its fine if a partially finished future goes live (backend done, Front end pending). Does not harm. Use [feature flags](https://www.martinfowler.com/articles/feature-toggles.html) where possible
+* Follow what works for you and your team
+* Try and be ready to change if a strategy does not work
+* Get management buy in for code-reviews so the timings are factored accordingly and there is enough visibility
+* Make sure to showcase the value of code review and evangelize across the org. Use simple metrics like bugs reduced per build and post deployment.
+* Encourage developers to run the code on their machines and review code
+* Refrain from using reviewing code on browser, they are not native editors (long lines are still an issue)
+* Keep your `master` sane and in release state
+* Its fine if a partially finished future goes live (backend done, Front end pending). Does not harm. Use [feature flags](https://www.martinfowler.com/articles/feature-toggles.html) where possible
 
   
 
 ### Next steps
 
-- Aim for high frequency integrations and make them friction free
-- Automate as much as possible
-- Follow continuous integration with good unit tests and integration tests 
+* Aim for high frequency integrations and make them friction free
+* Automate as much as possible
+* Follow continuous integration with good unit tests and integration tests 
 
 
 
