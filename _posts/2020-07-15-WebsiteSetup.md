@@ -143,6 +143,9 @@ And of course themes for quick playing around
 - Choose a new theme
 - Try admin interface and explore possibilities.
 
+### References
+
+You are free to clone/fork my [repository](https://github.com/vinayakg/vinayakg.github.io) to setup your own website. 
 
 
 
