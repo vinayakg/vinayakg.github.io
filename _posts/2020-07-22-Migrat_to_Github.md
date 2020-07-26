@@ -20,7 +20,7 @@ I would not sign up for managing one, unless you are a big corporate (you need t
 
 I would politely nudge them per above guidelines and be wiser (choose a provider). Also, every employee in a company needs to remember their core mission, their raison d'être. If your core mission is not to manage VCS servers and maintain uptime, hire someone who does it really well. 
 
-Also, Github now allows private unlimited repositories for teams of any size absolutely [free](https://github.com/pricing) ($0/month) with 2000 hours of Github Actions. So the cost effectiveness/saving (not known till you loose data with self hosted 😊) is not an argument anymore. You don't get branch protection only that is available for paid version ($4/month). So you are free to use this.
+Also, Github now allows private unlimited repositories for teams of any size absolutely [free](https://github.com/pricing) ($0/month) with 2000 hours of Github Actions. So the cost effectiveness/saving (not known till you loose data with self hosted 😊 ) is not an argument anymore. You don't get branch protection only that is available for paid version ($4/month). So you are free to use this.
 
 Github is the default choice for many. Personally for me, it was the tooling, ubiquity, community and ecosystem and the many new initiatives like storing the code in [Arctic](https://archive.github.com) which shows how deeply they care about their core business.  
 
