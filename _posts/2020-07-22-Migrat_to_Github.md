@@ -1,10 +1,10 @@
 ---
 
-title: Git migration to Github
+title: Git migration to Github and LFS
 #categories: [tech, learnings, productivity]
 tags: [tech, migration, productivity, git, hacks]
 layout: post
-permalink: /migrate-to-github-setup
+permalink: /migrate-to-github-and-lfs
 ---
 
 
