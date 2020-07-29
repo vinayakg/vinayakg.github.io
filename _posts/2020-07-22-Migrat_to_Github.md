@@ -9,20 +9,20 @@ permalink: /migrate-to-github-and-lfs
 
 
 
-Last week we wanted to migrate from a big git provider to github and I thought I will list down the setup here which any new growing startup teams can adopt and leverage for their teams. 
+Last week we wanted to migrate from a big git provider to github and I thought I will list down the setup here, few details around LFS which any new growing startup teams can adopt and leverage for their teams.
 
 ### Background
 
 [Git](https://en.wikipedia.org/wiki/Git) is so ubiquitous that it has become synonymous with [source code version control systems](https://en.wikipedia.org/wiki/Comparison_of_version-control_software) and folks rarely remember that others exist (including me). Had used Subversion and Visual Source Safe (VSS) but I was looking for [Distributed Version Control Systems](https://www.atlassian.com/blog/software-teams/mercurial-vs-git-why-mercurial). I am yet to try [Mercurial](https://www.mercurial-scm.org/) and have heard lots of [good things there too](https://www.joelonsoftware.com/2013/03/11/town-car-version-control/).
 
-Coming to choosing a provider, many devops(system administrators) would suggest hosting and managing source code version control (git) servers on their own and tell you that you can save costs and have unlimited repositories (lots of unorganized code). 
+Coming to choosing a provider, many devops(system administrators) would suggest hosting and managing source code version control (git) servers on their own and tell you that you can save costs and have unlimited repositories (lots of unorganized code).
 I would not sign up for managing one, unless you are a big corporate (you need to protect your IP) or a company that needs to guard its trade secret from every possible entity and the cost of managing them (yes, uptime and no data loss and security - it can get expensive) over weights the benefits it brings.
 
-I would politely nudge them per above guidelines and be wiser (choose a provider). Also, every employee in a company needs to remember their core mission, their raison d'être. If your core mission is not to manage VCS servers and maintain uptime, hire someone who does it really well. 
+I would politely nudge them per above guidelines and be wiser (choose a provider). Also, every employee in a company needs to remember their core mission, their raison d'être. If your core mission is not to manage VCS servers and maintain uptime, hire someone who does it really well.
 
 Also, Github now allows private unlimited repositories for teams of any size absolutely [free](https://github.com/pricing) ($0/month) with 2000 hours of Github Actions. So the cost effectiveness/saving (not known till you loose data with self hosted 😊 ) is not an argument anymore. You don't get branch protection only that is available for paid version ($4/month). So you are free to use this.
 
-Github is the default choice for many. Personally for me, it was the tooling, ubiquity, community and ecosystem and the many new initiatives like storing the code in [Arctic](https://archive.github.com) which shows how deeply they care about their core business.  
+Github is the default choice for many. Personally for me, it was the tooling, ubiquity, community and ecosystem and the many new initiatives like storing the code in [Arctic](https://archive.github.com) which shows how deeply they care about their core business.
 
 ### Migration
 
@@ -33,7 +33,7 @@ For command line folks, you may try the below steps
 
 
 -  Get a list of repositories from our current provider, most big providers have a REST endpoint, then for each repository
-  - 
+  -
     - Clone locally
     - Create empty repository with the same name on github.com (create folder and do hub create and push repository)
     - Go to the root location of this repository
@@ -43,7 +43,7 @@ For command line folks, you may try the below steps
 
 
 Here is a small [script](https://gist.github.com/vinayakg/45160e15c8d70e410ec1b42787481ee1) (untested, so please make sure before using it) for bitbucket.
-    
+
 
 The migration ran fine for most of the repositories except few of them where it started throwing error as seen below
 
@@ -76,7 +76,7 @@ As you can see above, there is an error and the repository did not get pushed. W
 
 Also, this file made it to the previous version control system since such limits did not exist on that provider. New learning - providers have different limits on file sizes when it comes to considering files under git lfs. I verified this by cloning the repository from old provider and I did not see any git-lfs status. Also I did not see anything on settings page of the provider.
 
-This would happen for any github repository under free plan, since Github only allows files smaller than 100MB, aka meet [git-lfs](https://docs.github.com/en/github/managing-large-files/about-git-large-file-storage). So my next reaction was to upgrade to a paid plan. 
+This would happen for any github repository under free plan, since Github only allows files smaller than 100MB, aka meet [git-lfs](https://docs.github.com/en/github/managing-large-files/about-git-large-file-storage). So my next reaction was to upgrade to a paid plan.
 
 Essentially, git-lfs lets you reduce your git clone and git fetch/pull size by using pointers to the remote git lfs server. Essentially you only download the large file when you `git checkout` that large file, till then its just a pointer. This is needed since git stores the entire history of all the commits inside .git folder like a graph. So any changes to larger files are copies in your .git which increase your download and disk size. In short, git-lfs lets you download them lazily. More details [here](https://www.atlassian.com/git/tutorials/git-lfs).
 
@@ -92,20 +92,20 @@ git reflog expire --expire=now --all && git gc --prune=now --aggressive # Remove
 git remote add origin REMOTE_LOCATION# Add the github origin here
 git push origin master
 ```
-This has to be done for all the branches that you need, individually else your other branches will have the same error as seen above. 
+This has to be done for all the branches that you need, individually else your other branches will have the same error as seen above.
 
 
 ### SETUP
 
-Since this was a fresh instance of the repositories on a new provider, had a chance to setup 2 factor authentication by default for all users. Security first. 
-When you setup 2 factor authentication, you need to Personal Access Tokens or use ssh config, the same github login password does not work anymore and rightly so. 
+Since this was a fresh instance of the repositories on a new provider, had a chance to setup 2 factor authentication by default for all users. Security first.
+When you setup 2 factor authentication, you need to Personal Access Tokens or use ssh config, the same github login password does not work anymore and rightly so.
 
 If you would like to use Personal access token, you may generate one from the link [here](https://github.com/settings/tokens), it is similar to App Passwords on most services supporting 2FA.
 If you want to use SSH for git access, you may refer one of my previous [article](https://vinayakg.dev/staying-sane-using-multiple-git-accounts).
 
 #### Access & Roles
 
-I believe every developer in the org should have read access to all the repositories, they can read and request for write access once they are ready with a PR. 
+I believe every developer in the org should have read access to all the repositories, they can read and request for write access once they are ready with a PR.
 Write access is granted to developers who need to commit changes to certain repositories, else its read.
 
 On a very high level, in any organization, one can divide various teams as represented in the picture. Once you have done that, it becomes easy to manage access across projects.
@@ -145,7 +145,7 @@ The topic of code review and PR review and process is an interesting topic and w
 
 - Leverage github actions to configure static analysis/linters on Pull Request/commit
 - Use github actions to find [secrets](https://github.com/marketplace/actions/gitleaks) before they get discovered online and abused on PR/commit
-- Leverage [Phabricator](https://www.phacility.com/phabricator/) to stream line code reviews and also use the workboards 
+- Leverage [Phabricator](https://www.phacility.com/phabricator/) to stream line code reviews and also use the workboards
 
 ### References
 
