@@ -12,6 +12,8 @@ I have been using Apple MacBook for the last 1.5 years and had set it only once 
 
 
 
+
+
 ## Background
 
 I bought a new [MBP 2019](https://support.apple.com/kb/SP799?locale=en_IN)  from US (they are cheaper in US) just in time before the pandemic and this machine has been extremely helpful for all the work I throw at it. Have also setup my remote workstation recently with an external monitor, et al. which I will cover in the subsequent blog posts. 
@@ -23,6 +25,7 @@ Being a developer, I also like the idea of being able to tweak my system to suit
 You may also restore your complete machine from a previous copy using either [Time Machine](https://support.apple.com/en-in/HT203981) or [Super Duper](https://www.shirt-pocket.com/SuperDuper/SuperDuperDescription.html), but this blog post is about setting up a computer fresh (either on a new or existing device).
 
 This blog can also be considered as a complete guide to setup a new MacBook without having to worry about spamware/malware/adware, they are all tested by me personally and have helped me from time to time. Since tools are continuously evolving, I will make sure to keep it updated as I change things at my end.
+
 
 
 ## Setup ⚙️
@@ -50,6 +53,8 @@ Here is a snapshot of my iCloud settings for folks who want to use their current
 
 
 
+
+
 ### Create User
 
 Before we go ahead we need to create an Admin user (aka root account). This will be a administrative account with high privileges and is mostly for administration purposes. You may use [this](https://osxdaily.com/2017/07/17/how-create-new-admin-account-mac/) link if you need steps.
@@ -64,6 +69,8 @@ When it comes to installation of apps/tools on MacOS, [brew](https://brew.sh/) i
 Since I had a previous installation of Mac, I used brew commands to get the apps/utilities that I had installed.
 
 You may use the command `brew leaves` to get the list of command line apps and `brew cask list` to get the list of all Applications that you may have previously installed. `brew --help` has a list of nifty features that you can leverage to automate most of the installation/maintenance.
+
+
 
 #### Brew install - non root
 
@@ -81,6 +88,8 @@ Since brew is a packet manager, I thought of installing all apps using `brew` as
   * `echo "export PATH=/Users/vg/Install/usr/local/bin:$PATH" >> ~/.zshrc `
 
 * Open new shell or do a `source .zshrc` for the new variables to take effect so we can start with the installation steps.
+
+
 
 
 
@@ -114,6 +123,8 @@ Now that our UI apps are installed completely, we will continue with the install
 
 
 
+
+
 ## Settings ⚙
 
 I changed some of the settings on my laptop so it mimics a more natural experience from my previous years. I am sharing some of my keyboard settings here that are useful. 
@@ -134,6 +145,8 @@ This has really helped me stay sane. You can change your keyboard settings using
 
 
 
+
+
 ### Adblock settings
 
 Though I have a VPN I still use hosts file from [here](https://winhelp2002.mvps.org/hosts.htm), so all ad-networks are blocked across my machine including all browsers. Please refer this [link](https://www.alphr.com/edit-hosts-file-mac-os-x/) on instructions to edit the hosts file. 
@@ -142,9 +155,13 @@ Then I use [this](https://chrome.google.com/webstore/detail/enhancer-for-youtube
 
 
 
+
+
 ### Intellij & VS Code Settings
 
 Intellij allows you to [export and import settings](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository) easily across machines. Visual Studio Code lets you replicate the entire installation including plugins, keyboard shortcuts, other settings with the help of this nifty and open [extension](https://marketplace.visualstudio.com/itemdetails?itemName=Shan.code-settings-sync). Visual Studio also lets 
+
+
 
 
 
@@ -191,6 +208,8 @@ Lets unpack some of the lines here
 
 
 
+
+
 ### Learnings📖
 
 The output from `brew leaves` and `brew cask list` did not work out of the box and I had to remove certain packages that are not maintained anymore. I am listing down below the packages that did not install and I need them to function for my work. 
@@ -204,17 +223,18 @@ Also, I am not getting into details on all the applications I use since that wou
 
 
 
+
+
 ### Closing thoughts 💭
 
 - Understand what tools you have and how they are installed and how they functions, goes a long way in understanding failures
-
 - Pick the right tool for the right job, use something that makes you productive
-
 - Keep evaluating your tools from time to time, don't settle with what you have today
-
 - Documenting this so others find this useful and save their time
 
-  
+
+
+
 
 ### Next Steps
 
