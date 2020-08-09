@@ -95,7 +95,7 @@ git push origin master
 This has to be done for all the branches that you need, individually else your other branches will have the same error as seen above.
 
 
-### SETUP
+### SETUP ⚙️
 
 Since this was a fresh instance of the repositories on a new provider, had a chance to setup 2 factor authentication by default for all users. Security first.
 When you setup 2 factor authentication, you need to Personal Access Tokens or use ssh config, the same github login password does not work anymore and rightly so.
@@ -103,7 +103,7 @@ When you setup 2 factor authentication, you need to Personal Access Tokens or us
 If you would like to use Personal access token, you may generate one from the link [here](https://github.com/settings/tokens), it is similar to App Passwords on most services supporting 2FA.
 If you want to use SSH for git access, you may refer one of my previous [article](https://vinayakg.dev/staying-sane-using-multiple-git-accounts).
 
-#### Access & Roles
+#### Access & Roles 
 
 I believe every developer in the org should have read access to all the repositories, they can read and request for write access once they are ready with a PR.
 Write access is granted to developers who need to commit changes to certain repositories, else its read.
@@ -116,7 +116,7 @@ Now when you would like to grant access/invite a new user, you just need to sele
 
 I prefer using a separate user (under build-automation) for CI/CD purposes. This makes it is visible and can be rolled back/changed and tracked easily.
 
-### TOOLS
+### TOOLS 🧰
 
 I have been using github tools for quite sometime and I have my own list of tools that help me remain productive everyday.
 Below are the tools that you might find beneficial.
@@ -134,7 +134,7 @@ Below are the tools that you might find beneficial.
 
 The topic of code review and PR review and process is an interesting topic and warrants dealing in detail, so I wont try and cover here.
 
-### Closing thoughts
+### Closing thoughts 💭
 
 - Understand your business domain and focus on what is core to your business
 - Pick the right tool for the right job, use what makes everyone comfortable
@@ -147,7 +147,7 @@ The topic of code review and PR review and process is an interesting topic and w
 - Use github actions to find [secrets](https://github.com/marketplace/actions/gitleaks) before they get discovered online and abused on PR/commit
 - Leverage [Phabricator](https://www.phacility.com/phabricator/) to stream line code reviews and also use the workboards
 
-### References
+### References 📚
 
 https://medium.com/collaborne-engineering/how-to-migrate-a-private-repository-from-bitbucket-to-github-6cddedd5d73
 
