@@ -13,7 +13,7 @@ So almost 3 weeks back I started discovering slowness in my internet speed. And 
 
 
 
-## Problem Statement & Basic Information :information_source:
+## Problem Statement & Basic Information ℹ️
 
 I have a 50 Mbps(Mega Bits per second) connection with my internet provider and I was getting only 1/5<sup>th</sup> of what I should be getting, i.e. ~10 Mbps. Since the time I have started noticing slow internet speed, I have been reporting the speed issues with the Customer Support team and trying to work with them to resolve the issue. Most of the times my tickets on slow speed were closed without addressing the issue and I would be busy to verify if speeds were restored and not bother if the problem was actually resolved. 
 
@@ -24,7 +24,7 @@ After multiple rounds (4-5) of remote troubleshooting, my slow internet speed ti
 
 
 
-### Background on Wi-Fi Frequencies :signal_strength:
+### Background on Wi-Fi Frequencies 📶
 
 First some background before we get to the real problem. There are 2 bands of Wi-Fi frequencies 2.4 GHz and 5 GHz. Most of the engineering students will remember that Bluetooth, Microwaves, Microwave Ovens, Wireless Lans, Cordless telephones ([allocated in 1998](https://en.wikipedia.org/wiki/Cordless_telephone)), etc. operate in the 2.4 GHz range. More recently even Mobile Phones([LTE](https://en.wikipedia.org/wiki/LTE_frequency_bands) and [5G](https://en.wikipedia.org/wiki/5G_NR_frequency_bands)) too are operating in the 2.4 GHz space. Due to the number of devices that are operating in the 2.4 GHz frequency range there could be interference in the signals and hence the final output will not be optimal.
 
@@ -53,7 +53,7 @@ Wi-Fi is based on 802.11 protocol and the first version was released in 1997 and
 
 
 
-### Troubleshooting/Support :hourglass:
+### Troubleshooting/Support ⌛
 
 Once the support person visited my home (to resolve the slow internet speed issue) after checking the nearest distribution box, he checked the WAN connection plugged into my router and asked if he could plug the cable directly into a Computer and check the speed directly. That’s the best and preferred way to test the real internet speed since it is the most direct way of testing. It also removes other factors that could contribute to modifying the speeds owing to interference on wi-fi/router settings et al.
 
@@ -83,7 +83,7 @@ I was also advised to replace this current router. It was in the middle of the d
 
 
 
-### Debugging & Root Cause :unlock:
+### Debugging & Root Cause 🔑
 
 In the evening, I thought of fixing my internet. I had one spare router, a [D-Link DIR-506L, Portable Wireless router](https://amzn.to/2Qu3fRb) so I thought of trying this router to setup the home internet.
 
@@ -106,7 +106,7 @@ I also recalled this from my reading of the TCP/UDP packet structure and remembe
 ![tcp-udp-packet](../assets/tcp-udp-packet.png)  
 
 
-#### Solution :sparkler:
+#### Solution 🚨
 
 This validated my hypothesis of blocking around MAC address. So I tried to see if my router had a way to change the MAC address. To my surprise, I found the option of changing my MAC address under the [MAC Clone]( https://en.wikipedia.org/wiki/MAC_spoofing) on the router
 
@@ -136,7 +136,7 @@ As a matter of fact, broadband providers hold monopoly today in most places and 
 
 
 
-### Closing thoughts :thought_balloon:
+### Closing thoughts 💭
 
 - Demand what you are paying for
 
@@ -152,7 +152,7 @@ As a matter of fact, broadband providers hold monopoly today in most places and 
 
   
 
-### References :books:
+### References 📚
 
 https://jvns.ca/networking-zine.pdf
 
