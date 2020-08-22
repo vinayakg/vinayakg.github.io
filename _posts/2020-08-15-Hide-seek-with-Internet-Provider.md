@@ -9,13 +9,13 @@ permalink: /hide-and-seek-with-internet-provider
 
 
 With the pandemic becoming the new normal, all of us having been looking at getting better at what we do every day. With my remote setup fully in place (yet to complete blog at this point), I was looking at optimizing every bit of my setup. 
-So almost 3 weeks back I started discovering slowness in my internet speed. And the entire experience of dealing with Internet providers and the customer support has taught me a thing or two. So I am documenting my learnings and experience. Bonus: You get to imagine/infer the internet provider.
+So almost 3 weeks back I started discovering slowness in my internet speed. And the entire experience of dealing with Internet providers and the customer support has taught me a thing or two. So I am documenting my learnings and experience. Bonus: You get to imagine/infer the ISP.
 
 
 
 ## Problem Statement & Basic Information ℹ️
 
-I have a 50 Mbps(Mega Bits per second) connection with my internet provider and I was getting only 1/5<sup>th</sup> of what I should be getting, i.e. ~10 Mbps. Since the time I have started noticing slow internet speed, I have been reporting the speed issues with the Customer Support team and trying to work with them to resolve the issue. Most of the times my tickets on slow speed were closed without addressing the issue and I would be busy to verify if speeds were restored and not bother if the problem was actually resolved. 
+I have a 50 Mbps(Mega Bits per second) connection with my ISP and I was getting only 1/5<sup>th</sup> of what I should be getting, i.e. ~10 Mbps. Since the time I have started noticing slow internet speed, I have been reporting the speed issues with the Customer Support team and trying to work with them to resolve the issue. Most of the times my tickets on slow speed were closed without addressing the issue and I would be busy to verify if speeds were restored and not bother if the problem was actually resolved. 
 
 Finally one day, I decided to follow on/re-open the same ticket and see if the Support team can help me really close the issue. 
 The customer support team also responded back with suggestions on what I can do to resolve this at my end ranging from changing channels on 2.4 GHz network to switching to a 5 GHz if I want to see the full 50 Mbps speed on any device. (More on channels and wi-fi frequencies with other details later in the post). None of these suggestions actually helped me solve the problem. 
