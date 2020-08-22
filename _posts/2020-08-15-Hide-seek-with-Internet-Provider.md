@@ -31,7 +31,7 @@ First some background before we get to the real problem. There are 2 bands of Wi
 2.4 GHz has overall 11 channels and you can see it below.
 
 
-![2020-08-20 09.53.43](/Users/vg/src/vinayakg.github.io/assets/2.4GHz-channels.gif)
+![2020-08-20 09.53.43](../assets/2.4GHz-channels.gif)
 
  
 
@@ -91,7 +91,7 @@ After a while the router charged (it’s a portable device that works on battery
 
 I picked up my regular router and plugged the WAN cable back into the WAN port. The result was same, no internet. Then I poked around my router settings and saw something interest on the WAN port. There was data movement, see below - Transmitted (Tx) and Received(Rx) packets. 
 
-![Data-movement-on-wan](/Users/vg/src/vinayakg.github.io/assets/Data-movement-on-wan.gif)
+![Data-movement-on-wan](../assets/Data-movement-on-wan.gif)
 
 
 
@@ -103,20 +103,20 @@ I also recalled this from my reading of the TCP/UDP packet structure and remembe
 
 
 
-![tcp-udp-packet](/Users/vg/src/vinayakg.github.io/assets/tcp-udp-packet.png)  
+![tcp-udp-packet](../assets/tcp-udp-packet.png)  
 
 
 #### Solution :sparkler:
 
 This validated my hypothesis of blocking around MAC address. So I tried to see if my router had a way to change the MAC address. To my surprise, I found the option of changing my MAC address under the [MAC Clone]( https://en.wikipedia.org/wiki/MAC_spoofing) on the router
 
-![mac-clone-router](/Users/vg/src/vinayakg.github.io/assets/mac-clone-router.png)
+![mac-clone-router](../assets/mac-clone-router.png)
 
 
 
 Now the actual page where I can modify the MAC address.
 
-![random-mac-clone.png](/Users/vg/src/vinayakg.github.io/assets/random-mac-clone.png)
+![random-mac-clone.png](../assets/random-mac-clone.png)
 
 
 
@@ -132,7 +132,7 @@ As a matter of fact, broadband providers hold monopoly today in most places and 
 
 
 
-N.B: I have added affiliate links for amazon, I might get a commission if you using my link
+**N.B:** I have added affiliate links for amazon, I might get a commission if you using my link
 
 
 
@@ -165,3 +165,4 @@ https://en.wikipedia.org/wiki/Wireless_LAN
 https://en.wikipedia.org/wiki/Global_Positioning_System
 
 https://www.linksys.com/us/support-article?articleNum=134478
+
