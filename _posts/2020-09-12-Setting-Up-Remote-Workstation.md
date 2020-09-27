@@ -7,7 +7,6 @@ image: vg-home-office-setup.jpg
 permalink: /setting-up-remote-workstation
 ---
 
-
 The last six months, we all have been working from home and trying to do our best remotely and staying productive. With this pandemic work from home has become the new normal, and with no vaccine in sight most likely we will continue working from home for quite sometime. 
 Personally, I always worked from office and work from home was something I felt was not meant for me and felt very unproductive. But in the last 6 months of working fully remote, I have realized that remote work can also be productive and even big projects can be delivered (involving lots of discussion with the team). When all are working remotely, the entire org works in a way to promote and be effective in remote work. Be it better documentation of requirements, detailed screenshots to back issues reported, architecture diagrams to make things clear for implementation, detailed git commits, better communication on email/teams et al., all teams have adopted more of such examples to stay productive and finish projects. However at the individual level, one also needs to make sure they have the right setup at home to work effectively. Lots of my colleagues and friends have been asking me to write about my remote setup, so here you go.
 
@@ -156,7 +155,7 @@ Last I settled with below settings to use an external monitor effectively. The w
 
 
 
-![image-20200928010130144](/Users/vg/src/vinayakg.github.io/assets/dual-monitor-setup-macos.png)
+![dual-monitor-setup-macos.png](../assets/dual-monitor-setup-macos.png)
 
 
 
@@ -176,7 +175,7 @@ Finally I went ahead with a bluetooth mouse.
 
 ### Show the setup 📷
 
-![IMG_4301](/Users/vg/src/vinayakg.github.io/assets/vg-home-office-setup.jpg)
+![vg-home-office-setup](../assets/vg-home-office-setup.jpg)
 
 
 
