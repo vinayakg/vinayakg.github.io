@@ -79,7 +79,7 @@ ASP .NET makes setting maintenance page very easy and have used this multiple ti
 
 
 
-![image-20210107011625336](/Users/vg/src/vinayakg.github.io/assets/503-maintenance-net-requ.png)
+![image-20210107011625336](../assets/503-maintenance-net-requ.png)
 
 If you are on [haproxy](http://www.haproxy.org/), then you just need to do this at one place and that's all you need to do. Steps are [here](https://gist.github.com/sts/62d8dd59221ab68661aa). Haproxy has a default maintenance page, you may customize if you want to.
 
@@ -97,7 +97,7 @@ backend web_maintenence
 
 Today, most of us are on cloud, and if you are on [ALB](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), there is a new feature which I discovered recently. You can serve the entire maintenance html off the ALB. That's really neat. All you need to do it is copy paste the HTML in the block as seen below on ALB settings.
 
-![image-20210107014525505](/Users/vg/src/vinayakg.github.io/assets/alb-html-maintenance.png)
+![image-20210107014525505](../assets/alb-html-maintenance.png)
 
 
 
@@ -138,7 +138,7 @@ So, we finally ended up with a setting like this in our ALB and we were set to t
 
 
 
-![image-20210107203001025](/Users/vg/src/vinayakg.github.io/assets/alb-ab-tests.png)
+![image-20210107203001025](../assets/alb-ab-tests.png)
 
 
 
