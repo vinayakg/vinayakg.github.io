@@ -51,7 +51,7 @@ In our case, the reasons were three fold.
 
 
 
-## How do we Solve:question:
+## How do we Solve❓
 
 We were able to mitigate the risk posed by database changes by replaying that multiple times on various environments by augmenting it with rollback scripts as well.
 
@@ -83,7 +83,7 @@ ASP .NET makes setting maintenance page very easy and have used this multiple ti
 
 If you are on [haproxy](http://www.haproxy.org/), then you just need to do this at one place and that's all you need to do. Steps are [here](https://gist.github.com/sts/62d8dd59221ab68661aa). Haproxy has a default maintenance page, you may customize if you want to.
 
-```sh
+```shell
 backend web_maintenence
     mode http
     errorfile  503 /etc/haproxy/errors/maintenance.http
@@ -146,7 +146,7 @@ Once we were done with the testing, we removed this rule from the top of the lis
 
 
 
-### Learnings📖
+## Learnings📖
 
 Its important to apply first level principles no matter how big or small the problem is at hand.
 
@@ -157,7 +157,7 @@ Every problem requires solution basis the problem context and the background, fi
 
 
 
-### References 📚
+## References 📚
 
 https://opensource.com/article/17/5/colorful-deployments
 
