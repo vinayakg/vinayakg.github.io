@@ -305,8 +305,8 @@ Vegeta is a versatile HTTP load testing tool and can request HTTP services with 
 - Apps situation
     Some of the apps were not working, I remember initially Java did not get installed with brew commands that I used for [Intel](https://en.wikipedia.org/wiki/List_of_Intel_CPU_microarchitectures) MAC, but thats not the case now. DBeaver also had some challenges, but they seemed to have handled now. Most of the apps now have a dedicated [ARM](https://www.arm.com/why-arm/architecture/cpu) app for Mac M1. Also, MAC OS automatically suggests installing [Rosetta](https://en.wikipedia.org/wiki/Rosetta_(software)) if it finds an incompatible app. If you want to know if your favorite app is M1 ready, you may find it [here](https://isapplesiliconready.com/).
 
- - Overall great experience2
-     I am personally very happy and pleasantly surprised with the performance. It costs lesser than Intel MACs and also consumes less energy.
+ - Overall great experience
+    I am personally very happy and pleasantly surprised with the performance. It costs lesser than Intel MACs and also consumes less energy.
     
 ### References
 
