@@ -33,7 +33,7 @@ Even in this installation the focus is to install [brew](https://brew.sh/) as a 
 ## Setup ⚙️
 
 
-### Connect Apple ID (to-do) 
+### Connect Apple ID
 
 Power on the computer and you will be guided through steps to setup few things including creating a user. Remember the user created at this point is user having administrator permissions - which means it has access to everything on your machine, more on that later.
 
@@ -85,7 +85,7 @@ Below are the steps you need to follow in this section.
 
 Once this is complete, brew will be installed and will be available to query from all paths; we had set brew install path in _PATH_. Lets look at next steps
 
-### Install UI Apps :computer:
+### Install UI Apps 🚀
 
 Here is the [Apps](https://gist.github.com/vinayakg/3a1ddca851ae70ea816fbe5a149c3263) list. You may download this file to any directory and run the below command. Each line in the file represents an application, you may remove anything that you don't need and things will still work fine.
 
@@ -100,7 +100,7 @@ This [application](https://freemacsoft.net/appcleaner/) can help you clean/remov
 #### [cloudflare-warp](https://1.1.1.1/) 
 This application by Cloudflare will help you route all dns queries through this. It also has malware and adult content blocker. Also keeps all your dns queries private. Highly recommended.  I use with [WARP](https://developers.cloudflare.com/warp-client) by default - handy when you are travelling and use hotel wi-fi 🤫
 
-![Image not found: ../../src/vinayakg.github.io/assets/eda9674d3a6d8455267c0891c4b2655e.png](../../src/vinayakg.github.io/assets/eda9674d3a6d8455267c0891c4b2655e.png "Image not found: ../../src/vinayakg.github.io/assets/eda9674d3a6d8455267c0891c4b2655e.png")
+![cloudflare-warp.png](../assets/eda9674d3a6d8455267c0891c4b2655e.png)
 
 
 
@@ -135,7 +135,7 @@ Its the most modern video player for MacOS. Its much better than VLC and lets me
 #### [Itsycal](https://www.mowglii.com/itsycal/)
 Its a very neat app that allows me to see the entire calendar from the menu bar. Has been a real time saver. It has good support for different font size, highlighting certain weekdays and of course multiple accounts in one place. Open source [link](https://github.com/sfsam/itsycal)
 
-![b51662727de534c34abf46fa7058383a.png](../../src/vinayakg.github.io/assets/b51662727de534c34abf46fa7058383a.png)
+![itsycal_ss.png](../assets/b51662727de534c34abf46fa7058383a.png)
 
 #### [Kap](https://getkap.co/)
 Its an [open-source](https://github.com/wulkano/kap) screen recorder built with web technology. I find this one of the smooth, lighter & fast performing gif creator from screen recorders.
@@ -196,7 +196,7 @@ If you are into markdown writing/editing, you will need this. I like zettlr more
 With the [release of WhatsApp Multi Device Beta](https://faq.whatsapp.com/web/download-and-installation/how-to-join-or-leave-the-multi-device-beta/?lang=en) you can now use Whatsapp on max. 4 devices even though the Whatsapp on mobile phone does not have network coverage. This used to be a struggle for some guys, multi device feature is a real boon. I am not a Whatsapp guy but I know for some its the lifeline.
 
 
-### Brew CLI Apps (Not for all :)) :black\_large\_square:
+### Brew CLI Apps (Not for all :)) 💻
 
 You don't have to install the below tools if you are not comfortable with command line and are more of a GUI person.
 This list is here for [cli](https://gist.github.com/vinayakg/3a1ddca851ae70ea816fbe5a149c3263#file-brew-cli-m1-txt). You may download the entire list in your `~/Install` folder and run the following command to install all command line apps.
@@ -290,7 +290,7 @@ Get `wifi-password` in one command.
 #### [vegeta](https://github.com/tsenart/vegeta)
 Vegeta is a versatile HTTP load testing tool and can request HTTP services with a constant request rate. It can be used both as a command line utility and a library.
 
-##  Overall Experience with M1 :hearts:
+##  Overall Experience with M1 ♥️
 
 - Faster and smoother
     I have been using the new Mac Mini M1 with 8 GB RAM since June and I must say its faster than my Intel MBP 2019 with 16 GB RAM.
@@ -305,7 +305,7 @@ Vegeta is a versatile HTTP load testing tool and can request HTTP services with 
 - Apps situation
     Some of the apps were not working, I remember initially Java did not get installed with brew commands that I used for [Intel](https://en.wikipedia.org/wiki/List_of_Intel_CPU_microarchitectures) MAC, but thats not the case now. DBeaver also had some challenges, but they seemed to have handled now. Most of the apps now have a dedicated [ARM](https://www.arm.com/why-arm/architecture/cpu) app for Mac M1. Also, MAC OS automatically suggests installing [Rosetta](https://en.wikipedia.org/wiki/Rosetta_(software)) if it finds an incompatible app. If you want to know if your favorite app is M1 ready, you may find it [here](https://isapplesiliconready.com/).
 
- - Overall great experience
+ - Overall great experience 
     I am personally very happy and pleasantly surprised with the performance. It costs lesser than Intel MACs and also consumes less energy.
     
 ### References
