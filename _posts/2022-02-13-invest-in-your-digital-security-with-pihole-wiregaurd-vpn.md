@@ -44,19 +44,21 @@ Here are some of the options that we can start immediately and most of them requ
 
 - Use 2 factor authentication wherever possible & strong passwords. Use password management tools like [keepass](https://keepass.org)
 
-- adblock - cons only dns and rudimentary
+- adblock - needs an app & is device specific
 
 - Dont use free wi-fi :)
   
-  Today we will look at some of the advanced options as this is mostly an ignored area and often folks think its not easy to do it.
+  
+  
+  Today we will look at some of the advanced options as this is mostly an ignored area and often folks think its not easy to do it or requires a lot of investment (time & money).
 
-### Using Raspberry Pi (for home network only)
+### Using Raspberry Pi (for home network only) 💻
 
  if you have a [raspberry-pi]([Teach, Learn, and Make with Raspberry Pi](https://www.raspberrypi.org/)) lying at home, you can use [pi-hole]([Pi-hole – Network-wide protection](https://pi-hole.net/)), follow install instructions [here]([Setup and run Pi-Hole on a Raspberry Pi | Privacy International](https://privacyinternational.org/guide-step/4341/raspberry-pi-setup-and-run-pi-hole)) and set up your raspberry-pi as your DNS server.
 Pi-hole protects you from ads, trackers, suspicious/malicious websites, et al.
 
- But this setup wont protect you beyond your home network. Also it wont protect you when you phone automatically switches to Mobile Internet when the wi-fi coverage is low at certain parts of your home.
- And, you dont get any protection if you are outside home.
+ But this setup won't protect you beyond your home network. Also it wont protect you when you phone automatically switches to Mobile Internet when the wi-fi coverage is low at certain parts of your home.
+ And you don't get any protection if you are outside home.
 
  So it does not cover you fully and also reveals our identity.
 
@@ -64,7 +66,7 @@ Pi-hole protects you from ads, trackers, suspicious/malicious websites, et al.
 
  Here we discuss a slightly advanced option
 
-### Using pi-hole & VPN on VPS
+### Using pi-hole & VPN on VPS 🔐☁️
 
 Since we would like to secure our network everywhere on the go, we will have to setup something on the public internet, i.e. public cloud.
 
@@ -73,7 +75,7 @@ In the next few steps, we will go through setting up a VPN and pi-hole on the sa
 Using a vpn ([Virtual Private network]([What is VPN? How It Works, Types of VPN | Kaspersky](https://www.kaspersky.com/resource-center/definitions/what-is-a-vpn))) allows you to secure your network all the time without having to work about leaving wi-fi network zone.  
 It changes your IP address and masks your virtual location. It encrypts all data and protects your devices.
 
-#### VPS
+#### VPS ☁️
 
 For public cloud, I was looking at various options, have an account on AWS and Azure but wanted something very nimble and cost effective not only in terms of VM cost but also for bandwidth usage. You will have to pay at least 50 USD for 500GB of bandwidth.
 
@@ -83,15 +85,15 @@ Refer below image for AWS Cloud.
 
 I tried Linode, Digital Ocean in the past - they all offer 100s of GBs of bandwidth with each VM. I tried [Vultr]([SSD VPS Servers, Cloud Servers and Cloud Hosting by Vultr - Vultr.com](https://www.vultr.com/)) this time which gives a 30day free access and promises to give a virtual machine at 2.5 USD with 500 GB data at the base plan.
 
-Initially I used a 5 USD VM(1CPU/1GB RAM & 1TB network) on vultr to set this up and things worked great . Then I got my hands on a 2.5 USD VM and setup pihole there.
+Initially I used a 5 USD VM(1CPU/1GB RAM & 1TB network) on vultr to set this up and things worked great. Then I got my hands on a 2.5 USD VM and setup pihole there.
 
-Here are the steps to setup vpn with pi-hole SSH into the machine with the root access or with a ssh key that you might already have If you dont have a SSH key, you may generate one using the below command
+Here are the steps to setup vpn with pi-hole. 
 
-#### Install STEPS
+#### Install Steps 💿
 
-##### ssh-keygen (Optional if you have an existing key)
+##### <u>**ssh-keygen (Optional if you have an existing key)**</u>
 
-You don't need to this if you would like to use password based auth and dont want to use SSH Keys for accessing server. SSH Keys are secure, work on assymetric encryption
+You don't need to this if you would like to use password based auth and dont want to use SSH Keys for accessing server. SSH Keys are secure, work on asymmetric encryption
 
 ``ssh-keygen -l -f /Users/vinayak/.ssh/keyname``
 
@@ -99,7 +101,7 @@ Copy the pub part of the above output to the vultr console and paste it there so
 
 ``cat /Users/vinayak/.ssh//Users/vinayak/.ssh/keyname | pbcopy``
 
-##### login to VM
+##### **<u>login to VM</u>**
 
 Now login using the SSH key 
 
@@ -109,9 +111,9 @@ OR Login using password authentication
 
 ``ssh ubuntu@ipaddress``
 
-Dont use root, on Ubuntu you get non root ubuntu by default, lets use ubuntu for installation
+Don't use root, on Ubuntu you get non root ubuntu by default, lets use ubuntu for installation.
 
-Install cloudflared
+##### **<u>Install cloudflared</u>**
 
 First, install latest cloudflared version. We need this to run DNS over HTTPS ([secure DNS](https://en.wikipedia.org/wiki/DNS_over_HTTPS)) and not use the default DNS available on the VM by default. We want to ensure DNS requests from the cloud VM get requested via secure channel, hence DoH
 
@@ -127,22 +129,28 @@ Now lets run cloudflared on using the below command
 
 This command will run cloudflared on port 54 for making DNS queries over HTTPS.
 
-##### pi-hole install
+##### **<u>pi-hole install</u>**
 
 Open other ssh session or use screen (in the above session) and run the below command
 
 ``curl -sSL [https://install.pi-hole.net](https://install.pi-hole.net) | sudo bash``
 
-Go through the steps and you can do next with the default options itself. At the end, you will be shown credentials to access your pihole - make a note of it to use. In case you forget, you may regenerate using the below command
+Go through the steps and you can do next with the default options itself. At the end, you will be shown credentials to access your pihole - do note them. In case you forget, you may regenerate using the below command
 
 ``pihole -a -p``
 
-You can access the admin interface for pi-hole using the https://public-ip/admin. Its not easy to manage iptables, we will use ufw to configure firewall rules on the machine
+You can access the admin interface for pi-hole using the https://public-ip/admin. 
 
-Lets enable admin panel access using ufw
+Its not easy to manage iptables, we will use ufw to configure firewall rules on the machine
 
-``sudo ufw app list
-``sudo ufw allow "Apache HTTP"``
+Lets enable admin panel access using ufw.
+
+```shell
+sudo ufw app list
+sudo ufw allow "Apache HTTP"
+```
+
+##### <u>**using cloudflared for DNS**</u>
 
 Now change the contents of `01-pihole.conf` 
 
@@ -183,7 +191,7 @@ This is the file that will make sure our queries are sent securely (more privacy
 Enable this service and restart 
 ``sudo systemctl enable dnsproxy.service``
 
-##### Install VPN now
+##### **<u>Install VPN now</u>** 🔐
 
 We will be using wiregaurd VPN as it is much more [lighter (~4000 LOC) & performant](https://www.wireguard.com/talks/fosdem2017-slides.pdf) than the other VPN options like OpenVPN or IPSEC.
 It consumes less battery (userful for phone) & also maintains the same bandwidth as one would get without VPN.
@@ -195,7 +203,7 @@ Go through the next steps as guided, you may choose the default options - choose
 
 At the end our vpn is ready to use now.
 
-##### Open VPN Port
+##### **<u>Open Ports</u>**
 
 VPN installer automatically adds `51820` port (wiregaurd port) to ``iptables`` during installation. Vultr also has a firewall that you need to setup in order to allow this port.
 
