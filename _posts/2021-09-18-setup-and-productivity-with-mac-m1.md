@@ -8,7 +8,7 @@ keywords:
   - productivity
 #categories: \[tech, productivity, setup, mac, m1,tools\]
 
-tags: \[mac, m1, productivity, setup, tools, tech\]
+tags: \[mac, m1, productivity, setup, tools, tech,startup\]
 
 layout: post
 
@@ -72,15 +72,15 @@ The steps needed for Non root(Standard) user installation are slightly more than
 
 Below are the steps you need to follow in this section.
 * Choose a custom folder where you would like all the applications to be installed.
-* I chose**Install**folder in`$HOME`directory and you may run the following command
+* I chose **Install** folder in `$HOME` directory and you may run the following command
     * `mkdir -p ~/Install/usr/local`\- this command creates all the directories with the exact structure as defined
         * `/usr/local`is the default brew path, we are overriding here so all packages go in one single folder (`~/Install/usr/local`) and we can delete/modify whenever needed without having to worry if any other apps rely on it.
-* Now install`brew`. In order to install in custom directory, have modified the brew script. You may download the install script from [here](https://gist.github.com/vinayakg/555d6e8a7015624e5ade56177fccded6).
-* Once you download [this](https://gist.github.com/vinayakg/555d6e8a7015624e5ade56177fccded6) script in`~/Install`folder, run`chmod +x Install.rb`
-* Now set the`HOMEBREW_PREFIX`variable for this user so that its available throughout. You may use .profile or .bashrc. or .zshrc based on your preference. Run the below 2 commands to set the`HOMEBREW_PREFIX`variable and to set the`PATH`variable.
+* Now install `brew`. In order to install in custom directory, have modified the brew script. You may download the install script from [here](https://gist.github.com/vinayakg/555d6e8a7015624e5ade56177fccded6).
+* Once you download [this](https://gist.github.com/vinayakg/555d6e8a7015624e5ade56177fccded6) script in `~/Install` folder, run` chmod +x Install.rb`
+* Now set the `HOMEBREW_PREFIX` variable for this user so that its available throughout. You may use .profile or .bashrc. or .zshrc based on your preference. Run the below 2 commands to set the `HOMEBREW_PREFIX` variable and to set the `PATH` variable.
     * `echo "export HOMEBREW_PREFIX=/Users/vg/Install/usr/local" >> ~/.zshrc`
     * `echo "export PATH=/Users/vg/Install/usr/local/bin:$PATH" >> ~/.zshrc`
-* Open new shell or do a`source .zshrc`for the new variables to take effect else the installation wont be as desired.
+* Open new shell or do a `source .zshrc` for the new variables to take effect else the installation wont be as desired.
 * Now run the command `./Install.rb ~/Install`. This will install brew in `~/Install/usr/local`
 
 Once this is complete, brew will be installed and will be available to query from all paths; we had set brew install path in _PATH_. Lets look at next steps
