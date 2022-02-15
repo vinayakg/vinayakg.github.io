@@ -81,7 +81,7 @@ Refer below image for AWS Cloud.
 
 ![AWS Bandwidth calculator](../assets/AWS%20Bandwidth%20cost%20for%20500GB.png)
 
-I tried Linode, Digital Ocean in the past - they all offer 100s of GBs of bandwidth with each VM. I tried [Vultr]([SSD VPS Servers, Cloud Servers and Cloud Hosting by Vultr - Vultr.com](https://www.vultr.com/)) this time which gives a 30day free access and promises to give a virtual machine at 2.5 USD with 500 GB data at the base plan.
+I tried Linode, Digital Ocean in the past - they all offer 100s of GBs of bandwidth with each VM. I tried [Vultr](https://www.vultr.com/) this time which gives a 30day free access and promises to give a virtual machine at 2.5 USD with 500 GB data at the base plan.
 
 Initially I used a 5 USD VM(1CPU/1GB RAM & 1TB network) on vultr to set this up and things worked great. Then I got my hands on a 2.5 USD VM and setup pihole there.
 
