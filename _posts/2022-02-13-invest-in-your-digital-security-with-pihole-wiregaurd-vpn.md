@@ -22,8 +22,8 @@ permalink: /invest-in-your-digital-security-with-pihole-wiregaurd-vpn
 With pandemic everything went remote right from corporate offices, educational institutions and everything else, there was no other choice. Internet is literally at the center of everything we do today. In the physical world, we invest in securing our homes/offices, our physical documents (in lockers) and if you are famous you need a bodygaurd as well. But in the digital world, we don't pay a lot of attention. We use things as they are offered.  The devices we use every day that has all the data including our personal data, bank accounts & other financial assets & everything that we store on the device. 
 We no longer need to follow someone or do physical search to know about someone. All we need to do is do a simple search and we get all details from a single place using internet. 
 
-Most of the softwares today also track us all the time, drop cookies and boat loads of javascript. And there are malicious websites that spread malware, virus and causes various other kinds of [nasty things]([10 Cyber Security Trends You Can't Ignore In 2021 (purplesec.us)](https://purplesec.us/cyber-security-trends-2021/)). 
-Hence our devices become the primary target of attack; [cybersecurity incidents]([Top 50 Cyber Security Statistics & Facts | CompTIA](https://connect.comptia.org/blog/cyber-security-stats-facts)) on the rise everywhere.
+Most of the softwares today also track us all the time, drop cookies and boat loads of javascript. And there are malicious websites that spread malware, virus and causes various other kinds of [nasty things](https://purplesec.us/cyber-security-trends-2021/).
+Hence our devices become the primary target of attack; [cybersecurity incidents](https://connect.comptia.org/blog/cyber-security-stats-facts) on the rise everywhere.
 Internet is a [recent phenomena](https://www.usg.edu/galileo/skills/unit07/internet07_02.phtml) and the adoption is still at nascent stages. So thinking of security in the digital world may only happen as we discover and understand the challenges involved.
 
 We need to start investing for security in the digital world as well in the same way as we think of securing ourself in the physical world.
@@ -52,7 +52,7 @@ Here are some of the options that we can start immediately and most of them requ
 
 ### Using Raspberry Pi (for home network only) 💻
 
- if you have a [raspberry-pi]([Teach, Learn, and Make with Raspberry Pi](https://www.raspberrypi.org/)) lying at home, you can use [pi-hole]([Pi-hole – Network-wide protection](https://pi-hole.net/)), follow install instructions [here]([Setup and run Pi-Hole on a Raspberry Pi | Privacy International](https://privacyinternational.org/guide-step/4341/raspberry-pi-setup-and-run-pi-hole)) and set up your raspberry-pi as your DNS server.
+ if you have a [raspberry-pi](https://www.raspberrypi.org/) lying at home, you can use [pi-hole](https://pi-hole.net/), follow install instructions [here](https://privacyinternational.org/guide-step/4341/raspberry-pi-setup-and-run-pi-hole) and set up your raspberry-pi as your DNS server.
 Pi-hole protects you from ads, trackers, suspicious/malicious websites, et al.
 
  But this setup won't protect you beyond your home network. Also it wont protect you when you phone automatically switches to Mobile Internet when the wi-fi coverage is low at certain parts of your home.
@@ -70,7 +70,7 @@ Since we would like to secure our network everywhere on the go, we will have to 
 
 In the next few steps, we will go through setting up a VPN and pi-hole on the same cloud instance and learn how to secure our network.
 
-Using a vpn ([Virtual Private network]([What is VPN? How It Works, Types of VPN | Kaspersky](https://www.kaspersky.com/resource-center/definitions/what-is-a-vpn))) allows you to secure your network all the time without having to work about leaving wi-fi network zone.  
+Using a vpn([Virtual Private Network](https://www.kaspersky.com/resource-center/definitions/what-is-a-vpn)) allows you to secure your network all the time without having to work about leaving wi-fi network zone.  
 It changes your IP address and masks your virtual location. It encrypts all data and protects your devices.
 
 #### VPS ☁️
@@ -196,7 +196,6 @@ It consumes less battery (userful for phone) & also maintains the same bandwidth
 
 Run the below command to being VPN installation
 
-
 `curl -L https://install.pivpn.io | bash`
 
 Go through the next steps as guided, you may choose the default options - choose wiregaurd for VPN option.
@@ -233,7 +232,7 @@ sudo crontab -e
 0 */1 * * * sudo /home/pi/youTube_ads_4_pi-hole/youtube.sh >/dev/null
 ```
 
-Since I was still seeing youtube ads, I looked for options and discovered [free-tube]([GitHub - FreeTubeApp/FreeTube: An Open Source YouTube app for privacy](https://github.com/FreeTubeApp/FreeTube)) app that is available for all desktop OS. Free-tube is a great tool to use and is a privacy first tool. It fits my needs. Free-tube does not support login though.
+Since I was still seeing youtube ads, I looked for options and discovered [freetube](https://github.com/FreeTubeApp/FreeTube) app that is available for all desktop OS. Free-tube is a great tool to use and is a privacy first tool. It fits my needs. Free-tube does not support login though.
 
 For mobile there are not options, but I discovered [Invidious - An open source alternative front-end to YouTube](https://invidious.io/) and it works on mobile phone browser really well - no login support though.
 
