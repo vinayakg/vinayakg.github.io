@@ -1,5 +1,5 @@
 ---
-title: "Block ads at the network layer with pihole & wiregaud vpn"
+title: "Invest in your digital security with pi-hole and wiregaurd"
 keywords:
      - Guide
      - Tutorial
