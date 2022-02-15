@@ -47,9 +47,7 @@ Here are some of the options that we can start immediately and most of them requ
 - adblock - needs an app & is device specific
 
 - Dont use free wi-fi :)
-  
-  
-  
+
   Today we will look at some of the advanced options as this is mostly an ignored area and often folks think its not easy to do it or requires a lot of investment (time & money).
 
 ### Using Raspberry Pi (for home network only) 💻
@@ -91,7 +89,7 @@ Here are the steps to setup vpn with pi-hole.
 
 #### Install Steps 💿
 
-##### <u>**ssh-keygen (Optional if you have an existing key)**</u>
+##### **<u>ssh-keygen (Optional if you have an existing key)</u>**
 
 You don't need to this if you would like to use password based auth and dont want to use SSH Keys for accessing server. SSH Keys are secure, work on asymmetric encryption
 
@@ -150,7 +148,7 @@ sudo ufw app list
 sudo ufw allow "Apache HTTP"
 ```
 
-##### <u>**using cloudflared for DNS**</u>
+##### **<u>using cloudflared for DNS</u>**
 
 Now change the contents of `01-pihole.conf` 
 
@@ -164,7 +162,7 @@ Remember we ran the DoH over port 54 using cloudflared earlier
 Then change `/etc/pihole/setupVars.conf` 
 Comment lines starting with `#PIHOLE_DNS`
 
-Save and quit
+Save and quit.
 
 Now restart network service using `sudo systemctl restart systemd-resolved.service`
 
@@ -186,7 +184,7 @@ Restart=on-abort
 WantedBy=multi-user.target
 ```
 
-This is the file that will make sure our queries are sent securely (more privacy)
+This is the file that will make sure our queries are sent securely (more privacy). Save and quit.
 
 Enable this service and restart 
 ``sudo systemctl enable dnsproxy.service``
@@ -197,6 +195,8 @@ We will be using wiregaurd VPN as it is much more [lighter (~4000 LOC) & perform
 It consumes less battery (userful for phone) & also maintains the same bandwidth as one would get without VPN.
 
 Run the below command to being VPN installation
+
+
 `curl -L https://install.pivpn.io | bash`
 
 Go through the next steps as guided, you may choose the default options - choose wiregaurd for VPN option.
@@ -211,7 +211,7 @@ Vultr's tooling and ecosystem is quite standard when compared to other cloud pro
 
 ![Vultr_ip_rules](../assets/Vultr_ip_rules.png)
 
-##### Running Tests
+##### **<u>Running Tests</u>**
 
 Lets start running some tests now. Add some users to pivpn using `pivpn add`
 
