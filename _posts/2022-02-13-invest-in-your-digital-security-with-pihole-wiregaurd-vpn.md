@@ -248,6 +248,41 @@ On the VM performance, it barely consumes any CPU expect for the hourly youtube 
 
 ![](../assets/vultr-cpu-stats.png)
 
+
+
+## Securing pi-hole & VPS 
+
+Since we have setup pi-hole on VPS and is accessible via public internet and the access requires just a  password, we need to have some form of 2FA.
+
+2FA on pi-hole is [open feature request](https://discourse.pi-hole.net/t/2fa-for-the-admin-page/24959/5) since its mostly used within home network. Since I have set it up to be used from the internet over public cloud, I am using wiregaurd vpn to allow pi-hole to be used only when connected to the vpn.
+
+We can also setup firewall on VPN or on ubuntu to allow pi-hole admin only on certain its, but lets keep that away for time being.
+
+Since there is no 2FA, we will try and setup basic authentication on lighttpd as below
+
+````shell
+$HTTP["url"] =~ "^/admin/" {
+auth.debug = 2
+auth.backend = "plain"
+auth.backend.plain.userfile = "/var/www/.lighttpdpassword"
+auth.require = ( "/admin/" =>
+    (
+    "method" => "basic",
+    "realm" => "Password protected area",
+    "require" => "user=username"
+    )
+	)
+}
+````
+
+
+
+Create a file with `.lighttpdpassword` with `username:password` as contents. Follow this [link](https://www.cyberciti.biz/tips/lighttpd-setup-a-password-protected-directory-directories.html) if you need more details.
+
+If you would like to setup 2FA for `ssh` password based login, please use this [link](https://www.raspberrypi.com/news/setting-up-two-factor-authentication-on-your-raspberry-pi/) for setting up 2FA.
+
+
+
 ## Closing thoughts
 
 I had put this under the back burner for a long time, only to realize recently that it was straight forward and very much needed.
