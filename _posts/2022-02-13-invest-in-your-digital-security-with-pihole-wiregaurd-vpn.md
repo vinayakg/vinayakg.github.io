@@ -174,7 +174,9 @@ To create the service file, run the command
 The contents for the service 
 
 ```shell
-[Unit] Description=CloudFlare DNS over HTTPS Proxy Wants=network-online.target After=network.target network-online.target
+[Unit] Description=CloudFlare DNS over HTTPS Proxy 
+Wants=network-online.target 
+After=network.target network-online.target
 
 [Service]  
 ExecStart=cloudflared proxy-dns --port 54 --upstream https://1.1.1.1/.well-known/dns-query --upstream https://1.0.0.1/.well-known/dns-query  
