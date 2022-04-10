@@ -123,7 +123,7 @@ Then run this command to install cloudflared
 
 Now lets run cloudflared on using the below command
 
-``sudo ./cloudflared proxy-dns --port 54 --upstream [https://1.1.1.1/.well-known/dns-query](https://1.1.1.1/.well-known/dns-query) --upstream [https://1.0.0.1/.well-known/dns-query](https://1.0.0.1/.well-known/dns-query)``
+``sudo ./cloudflared proxy-dns --port 54 --upstream https://1.1.1.1/.well-known/dns-query --upstream https://1.0.0.1/.well-known/dns-query``
 
 This command will run cloudflared on port 54 for making DNS queries over HTTPS.
 
@@ -131,7 +131,7 @@ This command will run cloudflared on port 54 for making DNS queries over HTTPS.
 
 Open other ssh session or use screen (in the above session) and run the below command
 
-``curl -sSL [https://install.pi-hole.net](https://install.pi-hole.net) | sudo bash``
+``curl -sSL https://install.pi-hole.net | sudo bash``
 
 Go through the steps and you can do next with the default options itself. At the end, you will be shown credentials to access your pihole - do note them. In case you forget, you may regenerate using the below command
 
@@ -303,4 +303,4 @@ And more importantly I get to script a lot of stuff which was otherwise not poss
 
 [WireGuard - Fast, Modern, Secure VPN Tunnel - FOSDEM 2017 Presentation](https://www.wireguard.com/talks/fosdem2017-slides.pdf)
 
-[What WireGuard® teaches us about simplicity and efficiency | NordVPN](https://nordvpn.com/blog/wireguard-simplicity-efficiency/)
+[What WireGuard® teaches us about simplicity and efficiency NordVPN](https://nordvpn.com/blog/wireguard-simplicity-efficiency/)
