@@ -1,5 +1,5 @@
 ---
-title: "Understanding data leakage while using internet"
+title: "Don't Let Your Data Slip Away: A Comprehensive Look at Data Leakage Online"
 keywords:
      - Background
      - How our networks resolve domain names (DNS)
@@ -14,7 +14,7 @@ tags: [dns, leak, internet, doh, dot, dnssec, security, cloudnative]
 
 layout: post
 
-permalink: /Understanding-data-leakage-while-using-internet
+permalink: /dont-let-your-data-slip-away-comprehensive-look-data-leakage-online
 ---
 
 ## Background
@@ -195,7 +195,6 @@ You may read about it in my next blog. Till then stay tuned.
 
 [What is DNS? | How DNS works | Cloudflare](https://www.cloudflare.com/en-in/learning/dns/what-is-dns/)
 
-[DNS over TLS vs. DNS over HTTPS | Secure DNS | Cloudflare](https://www.cloudflare.com/en-in/learning/dns/dns-over-tls/)
+[DNS over HTTPS vs DNS over TLS](https://www.cloudflare.com/en-in/learning/dns/dns-over-tls/)
 
-[Firefox DNS-over-HTTPS | Firefox Help (mozilla.org)](https://support.mozilla.org/en-US/kb/firefox-dns-over-https#w_configuring-dns-over-https-in-firefox)
-
+[Firefox DNS over HTTPS](https://support.mozilla.org/en-US/kb/firefox-dns-over-https#w_configuring-dns-over-https-in-firefox)
