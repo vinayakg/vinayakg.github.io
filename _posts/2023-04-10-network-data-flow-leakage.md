@@ -193,7 +193,7 @@ You may read about it in my next blog. Till then stay tuned.
 
 ## References
 
-[What is DNS? | How DNS works | Cloudflare](https://www.cloudflare.com/en-in/learning/dns/what-is-dns/)
+[What is DNS? How DNS works?](https://www.cloudflare.com/en-in/learning/dns/what-is-dns/)
 
 [DNS over HTTPS vs DNS over TLS](https://www.cloudflare.com/en-in/learning/dns/dns-over-tls/)
 
