@@ -29,7 +29,7 @@ I will try and breakdown and answer all these questions below. Also I will be di
 
 
 
-## How our networks resolve domain names (DNS) 
+## How our networks resolve domain names (DNS) 🌐
 
 In any network (home/office) you take an internet connection from an ISP and you hook that to a router. All ISP's provide their own default DNS settings for all network connections. Please see sample below.
 
@@ -41,7 +41,7 @@ There are ways to make this secure using DoH(DNS over HTTPS) and DoT(DNS over TL
 
 
 
-![dns-settings-provider](/Users/vg/src/vinayakg.github.io/assets/dns-settings-provider.png)
+![dns-settings-provider](../assets/dns-settings-provider.png)
 
 
 
@@ -51,7 +51,7 @@ If you would like to know the life of a DNS query - look at [this zine.](https:/
 
 
 
-## How is DoH(DNS over HTTPS) protecting privacy 
+## How is DoH(DNS over HTTPS) protecting privacy 🔒
 
 
 Let us try and understand how DoH is secure and how it protects the privacy.
@@ -100,7 +100,7 @@ In summary, while DNSSEC and DoH both address different aspects of DNS security,
 
 
 
-## What does the ISP see when using VPN?  
+## What does the ISP see when using VPN? 👀 
 
 
 
@@ -179,7 +179,7 @@ Alternatively, you may follow the below steps for all systems.
 | Click "Add" and enter the DoH resolver address you want to use | Click "OK" to save your changes                              |                                                  | Then add passcode and approve to install                     |
 | Click "OK" to save your changes                              |                                                              |                                                  |                                                              |
 
-## Preferred DoH setup
+## Preferred DoH setup 👍
 
 I have a pihole with pivpn, so when I connect using vpn - it blocks websites. No seperate DoH is needed. If you would like to read about how to setup, please use [this link](https://vinayakg.dev/invest-in-your-digital-security-with-pihole-wiregaurd-vpn).
 
