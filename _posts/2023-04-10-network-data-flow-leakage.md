@@ -161,7 +161,7 @@ Please find below steps for all systems
 
 There is no browser based solution for iOS
 
-### System wide solution
+### System wide solution {#system-wide-solution}
 
 
 
@@ -179,7 +179,7 @@ Alternatively, you may follow the below steps for all systems.
 | Click "Add" and enter the DoH resolver address you want to use | Click "OK" to save your changes                              |                                                  | Then add passcode and approve to install                     |
 | Click "OK" to save your changes                              |                                                              |                                                  |                                                              |
 
-**Update on Mac OS solution**: Have observed that though the profile shows as active and enabled on settings in Mac OS, Edge/Chrome don't honour the profile set, so its important to set in the browser. Kindly refer section [System wide solution](#System-wide-solution)
+**Update on Mac OS solution**: Have observed that though the profile shows as active and enabled on settings in Mac OS, Edge/Chrome don't honour the profile set, so its important to set in the browser. Kindly refer section [System wide solution](#system-wide-solution)
 
 
 
