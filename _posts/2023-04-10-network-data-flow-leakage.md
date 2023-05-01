@@ -152,7 +152,7 @@ Please find below steps for all systems
 
 | Windows                                                      | MacOS                                                        | Android                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Open your preferred web browser and go to its settings       | Open your preferred web browser and go to its settings       | Download and install a DoH-enabled web browser (e.g. Firefox, Chrome, etc.) from the Google Play Store |
+| Open your preferred web browser(e.g. Firefox, Chrome, Edge, etc.)  and go to its settings       | Open your preferred web browser(e.g. Firefox, Chrome, Edge, etc.)  and go to its settings       | Download and install a DoH-enabled web browser (e.g. Firefox, Chrome, Edge, etc.) from the Google Play Store |
 | Look for the "Network Settings" or "Proxy Settings" option   | Look for the "Advanced" settings or "Privacy and Security" option | Open the web browser and go to its settings                  |
 | Scroll down and look for the "DNS over HTTPS" or "Secure DNS" option | Scroll down and look for the "Enable DNS over HTTPS" or "Use Secure DNS" option | Scroll down and look for the "DNS over HTTPS" or "Secure DNS" option |
 | Turn on the toggle switch to enable DoH                      | Turn on the toggle switch to enable DoH                      | Turn on the toggle switch to enable DoH                      |
@@ -178,6 +178,12 @@ Alternatively, you may follow the below steps for all systems.
 | Click "Advanced" and select the "DNS" tab                    | Enter the DoH resolver address you want to use               |                                                  | It will prompt for Install                                   |
 | Click "Add" and enter the DoH resolver address you want to use | Click "OK" to save your changes                              |                                                  | Then add passcode and approve to install                     |
 | Click "OK" to save your changes                              |                                                              |                                                  |                                                              |
+
+**Update on Mac OS solution**: Have observed that though the profile shows as active and enabled on settings in Mac OS, Edge/Chrome don't honour the profile set, so its important to set in the browser. Kindly refer section [System wide solution](#System-wide-solution)
+
+
+
+![image-20230501190009136](../assets/macos-profile-settings.png)
 
 ## Preferred DoH setup 👍
 
