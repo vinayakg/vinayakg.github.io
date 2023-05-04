@@ -157,7 +157,7 @@ cat signed.crt intermediate.pem > fullcert.pem
 
 ### Setup example.com with SSL
 
-- Once you have the SSL certificate and private key, you can configure nginx to serve example.com over HTTPS (port 443) by adding the following lines to your server block:
+Once you have the SSL certificate and private key, you can configure nginx to serve example.com over HTTPS (port 443) by adding the following lines to your server block:
 
 ```nginx
 # This virtual server accepts HTTP/2 over HTTPS
@@ -174,7 +174,7 @@ server {
 }
 ```
 
-- Don't forget to reload nginx for the changes to take effect:
+Don't forget to reload nginx for the changes to take effect:
 
 ```bash
 sudo systemctl reload nginx
@@ -182,25 +182,25 @@ sudo systemctl reload nginx
 
 ### Automation
 
-- Create a script named `renew.sh` under `/home/ubuntu/certs/` and add following code
+Create a script named `renew.sh` under `/home/ubuntu/certs/` and add following code
 
-  ````bash
-  #!/bin/bash
-  
-  python3 /home/ubuntu/certs/acme_tiny.py --account-key /home/ubuntu/certs/account.key --csr /home/ubuntu/certs/vinayakg.dev.csr --acme-dir /home/ubuntu/certs/challenges > /home/ubuntu/certs/signed.crt
-  cat /home/ubuntu/certs/signed.crt /home/ubuntu/certs/intermediate.pem > /home/ubuntu/certs/fullcert.pem
-  sudo service nginx reload
-  ````
+````bash
+#!/bin/bash
 
-  
+python3 /home/ubuntu/certs/acme_tiny.py --account-key /home/ubuntu/certs/account.key --csr /home/ubuntu/certs/vinayakg.dev.csr --acme-dir /home/ubuntu/certs/challenges > /home/ubuntu/certs/signed.crt
+cat /home/ubuntu/certs/signed.crt /home/ubuntu/certs/intermediate.pem > /home/ubuntu/certs/fullcert.pem
+sudo service nginx reload
+````
 
-- To automate the certificate renewal process, you can set up a cron job that runs certbot every 60 days and renews the certificate if it is close to expiring. Here's an example cron job that runs at midnight on the 1st and 15th day of each month:
+
+
+To automate the certificate renewal process, you can set up a cron job that runs certbot every 60 days and renews the certificate if it is close to expiring. Here's an example cron job that runs at midnight on the 1st and 15th day of each month:
 
 ```bash
 0 0 1 */2 * root /home/ubuntu/certs/renew.sh
 ```
 
-- This command tells certbot to renew any expiring certificates and print a summary of the results, without upgrading itself to a newer version. You can customize the timing and options as needed, and add a notification or logging mechanism to alert you of any errors or warnings.
+This command tells certbot to renew any expiring certificates and print a summary of the results, without upgrading itself to a newer version. You can customize the timing and options as needed, and add a notification or logging mechanism to alert you of any errors or warnings.
 
 That's it! This should give you a good starting point for automating SSL certificate generation and setup on a Debian-based server with nginx.
 
