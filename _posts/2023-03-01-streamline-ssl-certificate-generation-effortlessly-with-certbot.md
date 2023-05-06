@@ -34,7 +34,7 @@ However - it is important to know how it can be done so we can appreciate the co
 
 
 
-### Registration {#registration}
+### Registration
 
 [Certbot](https://certbot.eff.org) is a free and open-source tool that automates the certificate generation and renewal process, and takes care of the private key management.
 

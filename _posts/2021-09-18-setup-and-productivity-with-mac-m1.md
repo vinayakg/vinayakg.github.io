@@ -8,7 +8,7 @@ keywords:
   - productivity
 #categories: \[tech, productivity, setup, mac, m1,tools\]
 
-tags: \[mac, m1, productivity, setup, tools, tech,startup\]
+tags: [mac, m1, productivity, setup, tools, tech,startup]
 
 layout: post
 

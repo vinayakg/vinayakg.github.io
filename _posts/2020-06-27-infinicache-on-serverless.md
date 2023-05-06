@@ -83,7 +83,7 @@ Let's see how InfiniCache solves this problem.
 InfiniCache exploits and orchestrates Serverless functions’ memory resources to enable elastic pay-per-use caching. InfiniCache’s design combines [erasure coding](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction) (using [Reed Solomon code](https://www.rubrik.com/blog/erasure-coding-rubrik-doubled-capacity-cluster/)), intelligent billed duration control, and an efficient data backup mechanism to maximize data availability and cost-effectiveness while balancing the risk of losing cached state and performance.
 InfiniCache also has a well-designed method for storage of bigger objects which we will explore in the [PUT](#put) section
 
-Let's look at the typical architecture and the various components involved here viz. [Proxy](#Proxy), [Client Library](#client library) & [Lambda function](#cache nodes/pool)
+Let's look at the typical architecture and the various components involved here viz. [Proxy](#Proxy), [Client Library](#client-library) & [Lambda function](#cache-nodes/pool)
 
 ![InfiniCache_Architecture.png](../assets/InfiniCache_Architecture.png)
 
@@ -151,7 +151,7 @@ If d2 does not respond in time, then to minimize the impact of tail latency, we 
 - Proxy captures the mapping of chunks to a key and Lambda nodes in the mapping table
 - Proxy invokes correct Lambda cache node
 - Proxy streams chunks to cache nodes
-- For larger objects, the client library can choose a more aggressive EC code. Details in [references](#References)
+- For larger objects, the client library can choose a more aggressive EC code. Details in [references](#references)
 
 
 
@@ -214,7 +214,7 @@ Some key observations based on experiments conducted that are worth mentioning f
 production workload
 - Small objects perform better in the elastic cache and large object cache performance is almost the same between Elastic cache and InfiniCache. InfiniCache is better by 100 times compared to s3
 
-### Reference
+### References
 
 https://arxiv.org/pdf/2001.10483.pdf
 

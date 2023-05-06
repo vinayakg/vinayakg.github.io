@@ -161,7 +161,7 @@ Please find below steps for all systems
 
 There is no browser based solution for iOS
 
-### System wide solution {#system-wide-solution}
+### System wide solution
 
 
 
