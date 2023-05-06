@@ -46,7 +46,7 @@ Since the certbot website does not support registration, the easiest way to do t
 sudo certbot register --email your@email.address --agree-tos
 ```
 
-This will register an account against the email provided and it will also create private keys et al. They will be located under `/etc/letsenrypt/accounts/acme-v02.api.letsencrypt.org/directory/0*/` inside the file `private_key.json` under n node of the json.
+This will register an account against the email provided and it will also create private keys et al. The private key will be located under n node in the file at  `/etc/letsenrypt/accounts/acme-v02.api.letsencrypt.org/directory/0*/private_key.json`.
 
 You will have to keep this safe, either move to a key vault or set permission/access for required users only.
 
@@ -95,9 +95,9 @@ DNS.2 = cal.vinayakg.dev
 
 
 
-Generate the CSR (Certifiate Signing Request) that will be needed to get Lets Encrypt to sign our certificates on each renewal.
+Generate the [CSR](https://www.globalsign.com/en-in/blog/what-is-a-certificate-signing-request-csr) (Certifiate Signing Request) that will be needed to get Lets Encrypt to sign our certificates on each renewal.
 
-Here the `openssl.cnf` is the file that was created in previous step, `vinayakg.dev.csr` is the out file, key is the private key that we generated in [previous section](#registration)
+`openssl.cnf` is from previous step, `vinayakg.dev.csr` is the out file, key is the private key that we generated in [previous section](#registration)
 
 ```shell
 openssl req -new -key /path/private.pem -out vinayakg.dev.csr -config openssl.cnf
@@ -108,6 +108,8 @@ When asked answer all questions as you see fit but use Common Name as one of the
 You may check CSR with `openssl req -in vinayakg.dev.csr -noout -text` and look for the DNS names as added in [alt_names] section.
 
 #### Few administrative steps for acme-validations
+
+ACME (Automatic Certificate Management Environment) validations is one of the challenge types used for domian validations. You may know more about it [here.](https://letsencrypt.org/docs/challenge-types/) 
 
 Create directory for challenges using `mkdir - p /home/ubuntu/certs/challenges`. 
 

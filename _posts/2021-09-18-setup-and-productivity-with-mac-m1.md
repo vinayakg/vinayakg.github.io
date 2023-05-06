@@ -13,7 +13,7 @@ tags: \[mac, m1, productivity, setup, tools, tech,startup\]
 layout: post
 
 permalink: /setup-and-productivity-with-mac-m1
-...
+---
 
 Recently had a chance to setup my new Mac Mini M1 and new M1 laptop. I thought I will document my experience along with the scripts and detailed notes. The aim is also help my friends/peers from the non-tech side to get benefitted with this. I know a lot of them who have got their new Mac M1 laptops and are eager to get the best out of it. I am certain this will not only help them setup but also help them become productive with their machines.  
 
