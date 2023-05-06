@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://sd.vinayakg.dev/dns-query</string>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Configures device to DoH</string>
+			<key>PayloadDisplayName</key>
+			<string>Vinayak G DoH</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.dnsSettings.managed.c9731aa9-1b80-46aa-af7f-5ab8beca8fe2</string>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadUUID</key>
+			<string>1d01eca5-ed69-4abf-ad99-340aa8d98801</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>ProhibitDisablement</key>
+			<false/>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Configure device to use my own DoH server.</string>
+	<key>PayloadDisplayName</key>
+	<string>Vinayak G DoH</string>
+	<key>PayloadIdentifier</key>
+	<string>dev.vinayakg.sd</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>d9358d81-c292-41ef-8d8a-2dbfa9911130</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
