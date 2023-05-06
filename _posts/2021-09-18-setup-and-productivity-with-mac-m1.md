@@ -1,5 +1,5 @@
 ---
-title: "Setup & Productivity with Mac M1"
+title: Setup & Productivity with Mac M1
 keywords:
   - mac
   - m1

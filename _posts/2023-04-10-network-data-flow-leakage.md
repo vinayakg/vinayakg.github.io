@@ -1,5 +1,5 @@
 ---
-title: "Don't Let Your Data Slip Away: A Comprehensive Look at Data Leakage Online"
+title: Don't Let Your Data Slip Away - A Comprehensive Look at Data Leakage Online
 keywords:
      - Background
      - How our networks resolve domain names (DNS)
